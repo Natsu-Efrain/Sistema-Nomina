@@ -41,7 +41,6 @@ public class ProcedimentoDB extends ConexionDB {
 				usr.setFecha_ingreso(rs.getString("fecha_ingreso"));
 				usr.setPuesto(rs.getString("nombre_puesto"));
 				usr.setArea(rs.getString("area"));
-			
 
 				listado.add(usr);
 			}
@@ -68,20 +67,22 @@ public class ProcedimentoDB extends ConexionDB {
 		desconectar();
 
 	}
-	
-	//Realiza la actualizacion de los datos en la tabla usuario
-	public void actualizaInformaciondatosPersonales(String num_telefono,String calle,String num_exterior,String colonia,String delegacion,String estado,String codigo_postal,String id_empleado)
-	{
+
+	// Realiza la actualizacion de los datos en la tabla usuario
+	public void actualizaInformaciondatosPersonales(String num_telefono, String calle, String num_exterior,
+			String colonia, String delegacion, String estado, String codigo_postal, String id_empleado) {
 		connectDatabase();
 
 		try {
 
 			Statement stm = connection.createStatement();
 
-			stm.execute("update usuario set num_telefono="+num_telefono+",calle='"+calle+"',num_exterior="+num_exterior+",colonia='"+colonia+"',estado='"+estado+"',codigo_postal="+codigo_postal+" where id_empleado="+id_empleado+";");
-            System.out.println("Se actualizo correctamente");
+			stm.execute("update usuario set num_telefono=" + num_telefono + ",calle='" + calle + "',num_exterior="
+					+ num_exterior + ",colonia='" + colonia + "',estado='" + estado + "',codigo_postal=" + codigo_postal
+					+ " where id_empleado=" + id_empleado + ";");
+			System.out.println("Se actualizo correctamente");
 		} catch (Exception e) {
-             System.out.println(e);
+			System.out.println(e);
 		}
 		desconectar();
 	}
