@@ -10,6 +10,8 @@
 	content="width=device-width, initial-scale=1, user-scalable=no" />
 <link rel="stylesheet" href="css/main.css" />
 <link rel="stylesheet" type="text/css" href="css/reset.css">
+<!-- Libreria de verificaion de Inputs -->
+<script type="text/javascript" src="js/editcheck.js"></script>
 </head>
 <body class="is-preload">
 
@@ -37,14 +39,14 @@
 
 		%>
 		<form class="form__reg" method="get"
-			action="/Sistema-Nomina/recuperarPassword">
+			action="/Sistema-Nomina/recuperarPassword" onsubmit="return valforms(this)">
 			<!--<input type="text" name="Nombre" placeholder="&#128100;Nombre" required autofocus /> <br/>
 					<input type="text" name="Apellido" placeholder="&#128100;Apellido" required /><br/>-->
 			<!--<input type="text" name="nombre" placeholder="&#9998; Nombre" required /> <br/>
 					<input type="text" name="apellido" placeholder="&#9998; Apellido" required /> <br/>
 					-->
 			<p>Por favor, inserte el correo asociado al usuario</p>
-			<input type="email" id="email" name="email"
+			<input type="text" id="email" name="email" onChange="return valforms(this.form,this)" editcheck="type=email"
 				placeholder="&#9993; Correo electrónico" required maxlength="30" />
 
 
