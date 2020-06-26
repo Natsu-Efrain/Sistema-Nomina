@@ -16,7 +16,8 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap"
 	rel="stylesheet">
-
+<!-- Libreria de verificaion de Inputs -->
+<script type="text/javascript" src="js/editcheck.js"></script>
 </head>
 <body>
 	<header>
@@ -64,7 +65,7 @@
 							<label for="idEmpleado" class="col-sm-4 col-form-label">Id
 								Empleado</label>
 							<div class="col-sm-8">
-								<input type="number" class="form-control" id="idEmpleado"
+								<input type="text" class="form-control" id="idEmpleado"
 									disabled value="${IdEmpleado}" >
 							</div>
 
@@ -91,7 +92,7 @@
 							<label for="numTelefono" class="col-sm-4 col-form-label">Numero
 								Telefono</label>
 							<div class="col-sm-8">
-								<input type="number" class="form-control" id="numTelefono"
+								<input type="text" class="form-control" id="numTelefono"
 									disabled value="${numTelefono}">
 							</div>
 						</div>
@@ -140,7 +141,7 @@
 
 							<label for="CP" class="col-sm-4 col-form-label">C.P</label>
 							<div class="col-sm-8">
-								<input type="number" class="form-control" id="CP" disabled
+								<input type="text" class="form-control" id="CP" disabled
 									value="${CP}">
 							</div>
 
@@ -224,13 +225,13 @@
 				<div class="modal-body">
 
 
-					<form method="get" action="/Sistema-Nomina/datosPersonales" >
+					<form method="get" action="/Sistema-Nomina/Index" onsubmit="return valforms(this)">
 						<div class="form-group row">
 					
 							<label for="numTelefono" class="col-sm-4 col-form-label">Numero
 								Telefono:</label>
 							<div class="col-sm-8">
-								<input type="number" class="form-control" id="numTelefono"
+								<input type="text" class="form-control" id="numTelefono"
 									name="numTelefono" onsubmit="return valforms(this)" editcheck="req=Y=Por favor introduce tu numero telefonico.;type=email">
 									
 							</div>
@@ -260,13 +261,13 @@
 							<br> <br> <label for="estado"
 								class="col-sm-4 col-form-label">Estado</label>
 							<div class="col-sm-8">
-								<input type="number" class="form-control" id="estado"
+								<input type="text" class="form-control" id="estado"
 									name="estado" required="required">
 							</div>
 							<br> <br> <label for="CP"
 								class="col-sm-4 col-form-label">C.P</label>
 							<div class="col-sm-8">
-								<input type="number" class="form-control" id="CP" name="CP" required="required">
+								<input type="text" class="form-control" id="CP" name="CP" required="required">
 							</div>
 
 							<div class="modal-footer padd-footer">
