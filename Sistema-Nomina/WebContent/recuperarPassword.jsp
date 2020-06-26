@@ -25,9 +25,14 @@
 		</div>
 		<%
 			String error = (String) request.getAttribute("error");
-		if (error != null) {
+		if (error.equals("Si")) {
 			out.print("<p>Ingreso un correo no registrada</p>");
 		}
+		else if(error.equals("No"))
+		{
+			out.print("<p>Se ha enviado un correo con la informacion, en unos momentos le llegara</p>");
+		}
+
 		%>
 		<form class="form__reg" method="get"
 			action="/Sistema-Nomina/recuperarPassword">
