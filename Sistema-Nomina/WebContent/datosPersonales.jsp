@@ -232,7 +232,7 @@
 								Telefono:</label>
 							<div class="col-sm-8">
 								<input type="text" class="form-control" id="numTelefono"
-									name="numTelefono" onsubmit="return valforms(this)" editcheck="req=Y=Por favor introduce tu numero telefonico.;type=email">
+									name="numTelefono" onChange="return valforms(this.form,this)" editcheck="Introduce un numero de 10 digitos;type=^\d{10}$;">
 									
 							</div>
 							<br> <br> <label for="calle"
@@ -313,8 +313,7 @@
 	<!-- Custom scripts for this template -->
 	<script src="js/freelancer.min.js"></script>
 
-<!-- Validaciones de formularios -->
-<script src="js/editcheck.js"></script> 
+
 
 
 
