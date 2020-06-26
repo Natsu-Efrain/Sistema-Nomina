@@ -24,6 +24,7 @@
 	</header>
 	<!-- Se agrego verificacion en los campos de email y contraseña -->
 	<!-- Signup Form -->
+	<!-- Permite que no se cambie la pagina y a su vez valida si los datos son correctos -->
 	<%
 		String error = (String) request.getAttribute("error");
 	if (error != null) {
