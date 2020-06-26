@@ -22,7 +22,7 @@
 			</header>
 
 		<!-- Signup Form -->
-			<form method="get" action="/Sistema_Nomina/Login">
+			<form method="get" action="/Sistema-Nomina/Login">
 				<input type="email" name="email" id="email" placeholder="Correo electrónico" required="required" maxlength="30" />
 				<br>
 				<input type="password" name="password" id="password" placeholder="Contraseña" required="required" maxlength="20"/>
