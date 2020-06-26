@@ -26,7 +26,7 @@
 		<%
 			String error = (String) request.getAttribute("error");
 		if (error != null) {
-			out.print("<p>Ingreso un correo  o contraseña no registrada</p>");
+			out.print("<p>Ingreso un correo no registrada</p>");
 		}
 		%>
 		<form class="form__reg" method="get"
