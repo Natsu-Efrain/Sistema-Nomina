@@ -18,7 +18,7 @@
 				<div>
 					<center><h2><span>Recuperar contraseña</span></h2></center>
 				</div>
-				<form class="form__reg" method="get" action="/Sistema_Nomina/recuperarPassword">
+				<form class="form__reg" method="get" action="/Sistema-Nomina/recuperarPassword">
 					<!--<input type="text" name="Nombre" placeholder="&#128100;Nombre" required autofocus /> <br/>
 					<input type="text" name="Apellido" placeholder="&#128100;Apellido" required /><br/>-->
 					<!--<input type="text" name="nombre" placeholder="&#9998; Nombre" required /> <br/>
