@@ -28,26 +28,26 @@
 		<!-- Funciona como validacion del envio correo o dato incorrecto -->
 		<%
 			String error = (String) request.getAttribute("error");
-		if(error!=null)
-		if (error.equals("Si")) {
-			out.print("<p>Ingreso un correo no registrado</p>");
-		}
-		else if(error.equals("No"))
-		{
-			out.print("<p>Se ha enviado un correo con la informacion, en unos momentos le llegara</p>");
-		}
-
+		if (error != null)
+			if (error.equals("Si")) {
+				out.print("<p>Ingreso un correo no registrado</p>");
+			} else if (error.equals("No")) {
+				out.print("<p>Se ha enviado un correo con la informacion, en unos momentos le llegara</p>");
+			}
 		%>
 		<form class="form__reg" method="get"
-			action="/Sistema-Nomina/recuperarPassword" onsubmit="return valforms(this)">
+			action="/Sistema-Nomina/recuperarPassword"
+			onsubmit="return valforms(this)">
 			<!--<input type="text" name="Nombre" placeholder="&#128100;Nombre" required autofocus /> <br/>
 					<input type="text" name="Apellido" placeholder="&#128100;Apellido" required /><br/>-->
 			<!--<input type="text" name="nombre" placeholder="&#9998; Nombre" required /> <br/>
 					<input type="text" name="apellido" placeholder="&#9998; Apellido" required /> <br/>
 					-->
 			<p>Por favor, inserte el correo asociado al usuario</p>
-			<input type="text" id="email" name="email" onChange="return valforms(this.form,this)" editcheck="type=email"
-				placeholder="&#9993; Correo electrónico" required maxlength="30" />
+			<input type="text" id="email" name="email"
+				placeholder="&#9993; Correo electrónico"
+				editcheck="minlen=5=&iexcl;Ingrese un correo valido por ejemplo alpha@ejemplo.com;type=ALPHA"
+				maxlength="30" />
 
 
 

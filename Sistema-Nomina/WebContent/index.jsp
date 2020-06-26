@@ -35,8 +35,9 @@
 		onsubmit="return valforms(this)">
 		<input type="text" name="email" id="email"
 			placeholder="Correo electrónico" required="required" maxlength="30"
-			onChange="return valforms(this.form,this)" editcheck="minlen=5=&iexcl;Ingrese un correo valido por ejemplo alpha@ejemplo.com;type=ALPHA" maxlength="30">
-		<br> <input type="password" name="password" id="password"
+			onChange="return valforms(this.form,this)"
+			editcheck="minlen=5=&iexcl;Ingrese un correo valido por ejemplo alpha@ejemplo.com;type=ALPHA"
+			maxlength="30"> <br> <input type="password" name="password" id="password"
 			placeholder="Contraseña" onChange="return valforms(this.form,this)" editcheck="minlen=1=&iexcl;Debe rellenar el campo;type=ALPHA" maxlength="20"/> <br>
 		<input type="submit" value="Entrar" />
 
