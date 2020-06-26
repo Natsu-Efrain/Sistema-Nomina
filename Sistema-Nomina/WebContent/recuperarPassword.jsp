@@ -25,6 +25,7 @@
 		</div>
 		<%
 			String error = (String) request.getAttribute("error");
+		if(error!=null)
 		if (error.equals("Si")) {
 			out.print("<p>Ingreso un correo no registrada</p>");
 		}
