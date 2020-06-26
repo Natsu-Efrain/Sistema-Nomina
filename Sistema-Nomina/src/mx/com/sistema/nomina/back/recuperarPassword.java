@@ -57,7 +57,9 @@ public class recuperarPassword extends HttpServlet {
 				mensaje="Tu contraseña es : "+usr.getPassword();
 				System.out.print(usr.getPassword());
 				cr.enviarCorreo(de, clave, para, mensaje, asunto);
-				rd = request.getRequestDispatcher("/recuperacionPasswordExictosa.jsp");
+				String error="No";
+	            request.setAttribute("error",error);
+				rd=request.getRequestDispatcher("/recuperarPassword.jsp");
 				rd.forward(request, response);
 				
 		}
