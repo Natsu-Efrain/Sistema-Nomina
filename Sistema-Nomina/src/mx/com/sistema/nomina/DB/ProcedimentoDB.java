@@ -9,7 +9,7 @@ import java.util.List;
 import mx.com.sistema.nomina.Bin.*;;
 
 public class ProcedimentoDB extends ConexionDB {
-//Obtencion de los datos de usuario para datos personales o consulta de nomina
+//Meodo para el ingreso al sistema y a que pagina redirigir
 	public List<Usuario> consultaUsuario(String email,String password) {
 		connectDatabase();
 		List<Usuario> listado = new ArrayList<Usuario>();
@@ -18,7 +18,7 @@ public class ProcedimentoDB extends ConexionDB {
 			Statement stm = connection.createStatement();
 			ResultSet rs = stm.executeQuery(
 					"select * from Usuario INNER JOIN Puesto ON Usuario.ID_puesto = Puesto.ID_puesto where correo='"
-							+ email + "';");
+							+ email + "' and contrasena='"+password+"';");
 
 			while (rs.next()) {
 				Usuario usr = new Usuario();
