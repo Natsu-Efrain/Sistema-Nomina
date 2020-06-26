@@ -39,7 +39,7 @@ public class recuperarPassword extends HttpServlet {
 		//Inicializacion de variables
 		String para = request.getParameter("email");
 		String de = "natsusalamander8888@gmail.com";
-		String clave = "EFRAINdark_9";
+		String clave = "dragonslayerefr";
 		String mensaje="";
 		String asunto = "Recuperacion de contraseña";
 		RequestDispatcher rd;

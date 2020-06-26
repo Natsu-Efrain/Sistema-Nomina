@@ -23,6 +23,7 @@
 				</h2>
 			</center>
 		</div>
+		<!-- Funciona como validacion del envio correo o dato incorrecto -->
 		<%
 			String error = (String) request.getAttribute("error");
 		if(error!=null)
