@@ -42,15 +42,16 @@ public class Login extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
     //Variables estaticas que serviran para filtros ya dentro de una vez en la pagina
-    static String em;
+    static String correo;
 	static String idEmpleado;
+	static String contrasena;
 	//Controlador del JSP
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String email=request.getParameter("email");
 		String password=request.getParameter("password");
-		em=email;
-		
+		correo=email;
+		contrasena=password;
 		RequestDispatcher rd;
 		ProcedimentoDB pdb=new ProcedimentoDB();
 		
