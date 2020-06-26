@@ -36,6 +36,7 @@ public class recuperarPassword extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		//Inicializacion de variables
 		String para = request.getParameter("email");
 		String de = "natsusalamander8888@gmail.com";
 		String clave = "EFRAINdark_9";
@@ -46,8 +47,8 @@ public class recuperarPassword extends HttpServlet {
 		List<Usuario> listaUsuario;
 		Correo cr=new Correo();
 		
-		
-		listaUsuario = pdb.consultaUsuario(para);
+		//Obtencion de los datos de la recuperacion de contraseña
+		listaUsuario = pdb.consultaUsuarioPassword(para);
 
 		if(listaUsuario.size()!=0)
 		{
@@ -63,8 +64,9 @@ public class recuperarPassword extends HttpServlet {
 		}
 		else
 		{
-			System.out.print("No existe");
-			rd = request.getRequestDispatcher("/recuperacionPasswordFallida.jsp");
+			String error="Si";
+            request.setAttribute("error",error);
+			rd=request.getRequestDispatcher("/recuperarPassword.jsp");
 			rd.forward(request, response);
 		}
 		
