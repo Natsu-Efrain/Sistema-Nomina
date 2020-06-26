@@ -26,7 +26,7 @@
 					<img src="img/portfolio/imagen/logo.png">
 				</div>
 				<div class="enlaces-header">
-					<a href="index.html">Inicio</a> <a href="datosPersonales.html">Datos
+					<a href="menu.jsp">Inicio</a> <a href="/Sistema-Nomina/Index">Datos
 						personales</a> <a href="#" data-toggle="modal"
 						data-target="#exampleModal">Empleados</a> <a href="nomina.html">Calculo
 						Nomina</a> <a href="finiquito.html">Finiquitos y Liquidaciones</a> <a
@@ -65,24 +65,27 @@
 								Empleado</label>
 							<div class="col-sm-8">
 								<input type="number" class="form-control" id="idEmpleado"
-									disabled value="${IdEmpleado}">
+									disabled value="${IdEmpleado}" >
 							</div>
 
 							<label for="nombre" class="col-sm-4 col-form-label">Nombre</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" id="nombre" disabled value="${nombre}">
+								<input type="text" class="form-control" id="nombre" disabled
+									value="${nombre}">
 							</div>
 
 							<label for="apellidoP" class="col-sm-4 col-form-label">Apellido
 								Paterno</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" id="apellidoP" disabled value="${apellidoP}">
+								<input type="text" class="form-control" id="apellidoP" disabled
+									value="${apellidoP}">
 							</div>
 
 							<label for="apellidoM" class="col-sm-4 col-form-label">Apellido
 								Materno</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" id="apellidoM" disabled value="${apellidoM}">
+								<input type="text" class="form-control" id="apellidoM" disabled
+									value="${apellidoM}">
 							</div>
 
 							<label for="numTelefono" class="col-sm-4 col-form-label">Numero
@@ -106,7 +109,8 @@
 						<div class="form-group row">
 							<label for="calle" class="col-sm-4 col-form-label">Calle</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" id="calle" disabled value="${calle}">
+								<input type="text" class="form-control" id="calle" disabled
+									value="${calle}">
 							</div>
 
 							<label for="numExterior" class="col-sm-4 col-form-label">Numero
@@ -118,22 +122,26 @@
 
 							<label for="colonia" class="col-sm-4 col-form-label">Colonia</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" id="colonia" disabled value="${colonia}">
+								<input type="text" class="form-control" id="colonia" disabled
+									value="${colonia}">
 							</div>
 
 							<label for="delegacion" class="col-sm-4 col-form-label">Delegacion</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" id="delegacion" disabled value="${delegacion}">
+								<input type="text" class="form-control" id="delegacion" disabled
+									value="${delegacion}">
 							</div>
 
 							<label for="estado" class="col-sm-4 col-form-label">Estado</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" id="estado" disabled value="${estado}">
+								<input type="text" class="form-control" id="estado" disabled
+									value="${estado}">
 							</div>
 
 							<label for="CP" class="col-sm-4 col-form-label">C.P</label>
 							<div class="col-sm-8">
-								<input type="number" class="form-control" id="CP" disabled value="${CP}">
+								<input type="number" class="form-control" id="CP" disabled
+									value="${CP}">
 							</div>
 
 						</div>
@@ -151,13 +159,15 @@
 						<div class="form-group row">
 							<label for="claseE" class="col-sm-4 col-form-label">Clase</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" id="claseE" disabled value="${claseE}">
+								<input type="text" class="form-control" id="claseE" disabled
+									value="${claseE}">
 							</div>
 
 							<label for="tipoPago" class="col-sm-4 col-form-label">Tipo
 								Pago</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" id="tipoPago" disabled value="${tipoPago}">
+								<input type="text" class="form-control" id="tipoPago" disabled
+									value="${tipoPago}">
 							</div>
 
 							<label for="fechaIngreso" class="col-sm-4 col-form-label">Fecha
@@ -169,12 +179,14 @@
 
 							<label for="puesto" class="col-sm-4 col-form-label">Puesto</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" id="puesto" disabled value="${puesto}">
+								<input type="text" class="form-control" id="puesto" disabled
+									value="${puesto}">
 							</div>
 
 							<label for="area" class="col-sm-4 col-form-label">Area</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" id="area" disabled value="${area}">
+								<input type="text" class="form-control" id="area" disabled
+									value="${area}">
 							</div>
 
 						</div>
@@ -186,8 +198,7 @@
 
 		<button type="button" class="btn btn-primary" data-toggle="modal"
 			data-target="#edicionDatos">Editar Información</button>
-		<br>
-		<br>
+		<br> <br>
 
 
 
@@ -201,6 +212,7 @@
 		aria-labelledby="portfolioModal1Label" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
+
 				<div class="modal-header">
 					<h5 class="modal-title" id="exampleModalLabel">Edición de
 						Información</h5>
@@ -211,56 +223,64 @@
 				</div>
 				<div class="modal-body">
 
-					<div class="form-group row">
 
-						<label for="numTelefono" class="col-sm-4 col-form-label">Numero
-							Telefono:</label>
-						<div class="col-sm-8">
-							<input type="number" class="form-control" id="numTelefono"
-								disabled>
-						</div>
-						<br>
-						<br> <label for="calle" class="col-sm-4 col-form-label">Calle</label>
-						<div class="col-sm-8">
-							<input type="number" class="form-control" id="calle" disabled>
-						</div>
-						<br>
-						<br> <label for="numExterior" class="col-sm-4 col-form-label">Numero
-							Ext</label>
-						<div class="col-sm-8">
-							<input type="text" class="form-control" id="numeroExterior"
-								disabled>
-						</div>
-						<br>
-						<br> <label for="colonia" class="col-sm-4 col-form-label">Colonia</label>
-						<div class="col-sm-8">
-							<input type="text" class="form-control" id="colonia" disabled>
-						</div>
-						<br>
-						<br> <label for="delegacion" class="col-sm-4 col-form-label">Delegacion</label>
-						<div class="col-sm-8">
-							<input type="text" class="form-control" id="delegacion" disabled>
-						</div>
-						<br>
-						<br> <label for="estado" class="col-sm-4 col-form-label">Estado</label>
-						<div class="col-sm-8">
-							<input type="number" class="form-control" id="estado" disabled>
-						</div>
-						<br>
-						<br> <label for="CP" class="col-sm-4 col-form-label">C.P</label>
-						<div class="col-sm-8">
-							<input type="number" class="form-control" id="CP" disabled>
-						</div>
+					<form method="get" action="/Sistema-Nomina/datosPersonales" >
+						<div class="form-group row">
+					
+							<label for="numTelefono" class="col-sm-4 col-form-label">Numero
+								Telefono:</label>
+							<div class="col-sm-8">
+								<input type="number" class="form-control" id="numTelefono"
+									name="numTelefono" onsubmit="return valforms(this)" editcheck="req=Y=Por favor introduce tu numero telefonico.;type=email">
+									
+							</div>
+							<br> <br> <label for="calle"
+								class="col-sm-4 col-form-label">Calle</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" id="calle" name="calle" required="required">
+							</div>
+							<br> <br> <label for="numExterior"
+								class="col-sm-4 col-form-label">Numero Ext</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" id="numeroExterior"
+									name="numeroExterior" required="required">
+							</div>
+							<br> <br> <label for="colonia"
+								class="col-sm-4 col-form-label">Colonia</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" id="colonia"
+									name="colonia" required="required">
+							</div>
+							<br> <br> <label for="delegacion"
+								class="col-sm-4 col-form-label">Delegacion</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" id="delegacion"
+									name="delegacion" required="required">
+							</div>
+							<br> <br> <label for="estado"
+								class="col-sm-4 col-form-label">Estado</label>
+							<div class="col-sm-8">
+								<input type="number" class="form-control" id="estado"
+									name="estado" required="required">
+							</div>
+							<br> <br> <label for="CP"
+								class="col-sm-4 col-form-label">C.P</label>
+							<div class="col-sm-8">
+								<input type="number" class="form-control" id="CP" name="CP" required="required">
+							</div>
+
+							<div class="modal-footer padd-footer">
+								<button type="button" class="btn btn-secondary"
+									data-dismiss="modal">Cancelar</button>
+								<button type="submit" class="btn btn-primary">Aceptar</button>
+							</div>
 
 
-					</div>
-
+						</div>
+					</form>
 				</div>
-				<div class="modal-footer padd-footer">
-					<button type="button" class="btn btn-secondary"
-						data-dismiss="modal">Cancelar</button>
-					<button type="button" class="btn btn-primary">Aceptar</button>
-				</div>
+
+
 			</div>
 		</div>
 	</div>
@@ -291,6 +311,11 @@
 
 	<!-- Custom scripts for this template -->
 	<script src="js/freelancer.min.js"></script>
+
+<!-- Validaciones de formularios -->
+<script src="js/editcheck.js"></script> 
+
+
 
 </body>
 </html>
