@@ -232,42 +232,42 @@
 								Telefono:</label>
 							<div class="col-sm-8">
 								<input type="text" class="form-control" id="numTelefono"
-									name="numTelefono" onChange="return valforms(this.form,this)" editcheck="Introduce un numero de 10 digitos;type=^\d{10}$;">
+									name="numTelefono" onChange="return valforms(this.form,this)" editcheck="minlen=10=&iexcl;Ingrese un numero de telefono valido;type=int" maxlength="10">
 									
 							</div>
 							<br> <br> <label for="calle"
 								class="col-sm-4 col-form-label">Calle</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" id="calle" name="calle" required="required">
+								<input type="text" class="form-control" id="calle" name="calle" onChange="return valforms(this.form,this)" editcheck="minlen=10=&iexcl;Ingrese una calle valida;type=ALPHA" maxlength="50">
 							</div>
 							<br> <br> <label for="numExterior"
 								class="col-sm-4 col-form-label">Numero Ext</label>
 							<div class="col-sm-8">
 								<input type="text" class="form-control" id="numeroExterior"
-									name="numeroExterior" required="required">
+									name="numeroExterior" onChange="return valforms(this.form,this)" editcheck="minlen=1=&iexcl;Ingrese una numero exterior valido;type=int" maxlength="4" >
 							</div>
 							<br> <br> <label for="colonia"
 								class="col-sm-4 col-form-label">Colonia</label>
 							<div class="col-sm-8">
 								<input type="text" class="form-control" id="colonia"
-									name="colonia" required="required">
+									name="colonia" onChange="return valforms(this.form,this)" editcheck="minlen=5=&iexcl;Ingrese una colonia valida;type=ALPHA" maxlength="25">
 							</div>
 							<br> <br> <label for="delegacion"
 								class="col-sm-4 col-form-label">Delegacion</label>
 							<div class="col-sm-8">
 								<input type="text" class="form-control" id="delegacion"
-									name="delegacion" required="required">
+									name="delegacion" onChange="return valforms(this.form,this)" editcheck="minlen=10=&iexcl;Ingrese una delegacion valida;type=ALPHA" maxlength="25">
 							</div>
 							<br> <br> <label for="estado"
 								class="col-sm-4 col-form-label">Estado</label>
 							<div class="col-sm-8">
 								<input type="text" class="form-control" id="estado"
-									name="estado" required="required">
+									name="estado" onChange="return valforms(this.form,this)" editcheck="minlen=5=&iexcl;Ingrese un estado valid0;type=ALPHA" maxlength="25">
 							</div>
 							<br> <br> <label for="CP"
 								class="col-sm-4 col-form-label">C.P</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" id="CP" name="CP" required="required">
+								<input type="text" class="form-control" id="CP" name="CP" onChange="return valforms(this.form,this)" editcheck="minlen=5=&iexcl;Ingrese CP valido;type=int" maxlength="5">
 							</div>
 
 							<div class="modal-footer padd-footer">
