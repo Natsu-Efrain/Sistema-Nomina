@@ -36,10 +36,12 @@ public class Index extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		//Se inicializa variables
 		ProcedimentoDB pdb=new ProcedimentoDB();
 		RequestDispatcher rd;
 		List<Usuario> listaUsuario;
-		listaUsuario=pdb.consultaUsuario(Login.em);
+		//Obtencion de los datos del usuario en la BD
+		listaUsuario=pdb.consultaUsuario(Login.correo,Login.contrasena);
 		for (Usuario usr : listaUsuario) {
 			
 			request.setAttribute("IdEmpleado", usr.getId_empleado());
