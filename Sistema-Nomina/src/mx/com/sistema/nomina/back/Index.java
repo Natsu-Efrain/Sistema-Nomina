@@ -32,6 +32,7 @@ public class Index extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
@@ -57,8 +58,8 @@ public class Index extends HttpServlet {
 			request.setAttribute("fechaIngreso", usr.getFecha_ingreso());
 			request.setAttribute("puesto", usr.getPuesto());
 			request.setAttribute("area", usr.getArea());
-			
 		}
+		
 		rd = request.getRequestDispatcher("/datosPersonales.jsp");
 		rd.forward(request, response);
 	}
