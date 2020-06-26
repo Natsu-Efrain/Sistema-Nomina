@@ -20,6 +20,13 @@ public class Usuario {
     private String fecha_ingreso;
     private String puesto;
     private String area;
+    private String activo;
+	public String getActivo() {
+		return activo;
+	}
+	public void setActivo(String activo) {
+		this.activo = activo;
+	}
 	public String getClase() {
 		return clase;
 	}
