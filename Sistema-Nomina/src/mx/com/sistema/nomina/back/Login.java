@@ -41,7 +41,10 @@ public class Login extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+    //Variables estaticas que serviran para filtros ya dentro de una vez en la pagina
     static String em;
+	static String idEmpleado;
+	//Controlador del JSP
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String email=request.getParameter("email");
@@ -53,13 +56,11 @@ public class Login extends HttpServlet {
 		
         List<Usuario> listaUsuario;
 		
-		listaUsuario=pdb.consultaUsuario(email);
+		listaUsuario=pdb.consultaUsuario(email,password);
 		if(listaUsuario.size()!=0)
 		{
 		for(Usuario usr:listaUsuario) {
-			
-			if(usr.getEmail().equals(email)&&usr.getPassword().equals(password))
-			{
+				idEmpleado=usr.getId_empleado();
                 if(Integer.parseInt(usr.getId_puesto())>=101&&Integer.parseInt(usr.getId_puesto())<=200)
                 {
 				rd=request.getRequestDispatcher("/menu.jsp");
@@ -71,20 +72,15 @@ public class Login extends HttpServlet {
     				rd.forward(request, response);
                 }
 			}
+		}
 			else
 			{
-				rd=request.getRequestDispatcher("/LoginFallido.jsp");
+				String error="Si";
+	            request.setAttribute("error",error);
+				rd=request.getRequestDispatcher("/index.jsp");
 				rd.forward(request, response);
 			}
-			}
-			
-		}
-		
-		else
-		{
-			rd=request.getRequestDispatcher("/LoginFallido.jsp");
-			rd.forward(request, response);
-		}
+	
 		
 	}
 
