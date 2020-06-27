@@ -38,7 +38,7 @@
                 
                      <a href="Index">Datos personales</a>
                   
-                     <a href="#" data-toggle="modal" data-target="#exampleModal">Empleados</a>
+                     <a href="edicionSistema.jsp">Sistema</a>
                      
                      <a href="nomina.html">Calculo Nomina</a>
                      <a href="finiquito.html">Finiquitos y Liquidaciones</a>      

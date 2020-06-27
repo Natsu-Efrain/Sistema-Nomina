@@ -68,8 +68,8 @@ public class Index extends HttpServlet {
 		}
 		else
 		{
-			rd = request.getRequestDispatcher("/datosPersonalesEmpleado.jsp");
-			rd.forward(request, response);
+	    rd = request.getRequestDispatcher("/datosPersonalesEmpleado.jsp");
+		rd.forward(request, response);
 		}
 	}
 
