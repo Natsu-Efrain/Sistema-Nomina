@@ -46,7 +46,7 @@
 			<p>Por favor, inserte el correo asociado al usuario</p>
 			<input type="text" id="email" name="email"
 				placeholder="&#9993; Correo electrónico"
-				editcheck="minlen=5=&iexcl;Ingrese un correo valido por ejemplo alpha@ejemplo.com;type=ALPHA"
+				editcheck="minlen=5=&iexcl;Ingrese un correo valido por ejemplo alpha@ejemplo.com;type=email"
 				maxlength="30" />
 
 
