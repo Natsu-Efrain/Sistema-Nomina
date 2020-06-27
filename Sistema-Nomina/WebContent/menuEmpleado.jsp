@@ -33,7 +33,7 @@
                  </div>
                  <div class="enlaces-header">
                      <a href="menuEmpleado.jsp">Inicio</a>
-                     <a href="indexEmpleado">Datos personales</a>
+                     <a href="/Sistema-Nomina/Index">Datos personales</a>
                      
                      <a href="#" data-toggle="modal" data-target="#exampleModal2">Nomina</a>
                      
