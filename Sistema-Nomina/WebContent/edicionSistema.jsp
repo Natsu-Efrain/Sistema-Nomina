@@ -158,7 +158,7 @@
 									class="form-control" id="correo" value="" required>
 							</div>
 						</div>
-
+<!-- Se genera una lista depegable de forma dinamica -->
 						<select class="custom-select my-1 mr-sm-2 col-5 mb-5" id="puesto"
 							name="puesto">
 							<option selected disabled>Puestos</option>
