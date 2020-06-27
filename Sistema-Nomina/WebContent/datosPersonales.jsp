@@ -244,30 +244,30 @@
 								class="col-sm-4 col-form-label">Numero Ext</label>
 							<div class="col-sm-8">
 								<input type="text" class="form-control" id="numeroExterior"
-									name="numeroExterior" onChange="return valforms(this.form,this)" editcheck="minlen=1=&iexcl;Ingrese una numero exterior valido;type=int" maxlength="4" >
+									name="numeroExterior" onChange="return valforms(this.form,this)" editcheck="type=int=Ingresa un numero de exterior valido;cvt=~" maxlength="4" >
 							</div>
 							<br> <br> <label for="colonia"
 								class="col-sm-4 col-form-label">Colonia</label>
 							<div class="col-sm-8">
 								<input type="text" class="form-control" id="colonia"
-									name="colonia" onChange="return valforms(this.form,this)" editcheck="minlen=5=&iexcl;Ingrese una colonia valida;type=ALPHA" maxlength="25">
+									name="colonia" onChange="return valforms(this.form,this)" editcheck="type=ALPHA=Ingrese una delegacion valida;cvt=~" maxlength="25">
 							</div>
 							<br> <br> <label for="delegacion"
 								class="col-sm-4 col-form-label">Delegacion</label>
 							<div class="col-sm-8">
 								<input type="text" class="form-control" id="delegacion"
-									name="delegacion" onChange="return valforms(this.form,this)" editcheck="minlen=10=&iexcl;Ingrese una delegacion valida;type=ALPHA" maxlength="25">
+									name="delegacion" onChange="return valforms(this.form,this)" editcheck="type=ALPHA=Ingrese una delegacion valida;cvt=~" maxlength="25">
 							</div>
 							<br> <br> <label for="estado"
 								class="col-sm-4 col-form-label">Estado</label>
 							<div class="col-sm-8">
 								<input type="text" class="form-control" id="estado"
-									name="estado" onChange="return valforms(this.form,this)" editcheck="minlen=5=&iexcl;Ingrese un estado valid0;type=ALPHA" maxlength="25">
+									name="estado" onChange="return valforms(this.form,this)" editcheck="type=ALPHA=Ingrese una estado valida;cvt=~" maxlength="25">
 							</div>
 							<br> <br> <label for="CP"
 								class="col-sm-4 col-form-label">C.P</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" id="CP" name="CP" onChange="return valforms(this.form,this)" editcheck="minlen=5=&iexcl;Ingrese CP valido;type=int" maxlength="5">
+								<input type="text" class="form-control" id="CP" name="CP" onChange="return valforms(this.form,this)" editcheck="type=int=Ingrese una codigo postal valido;cvt=~" maxlength="5">
 							</div>
 
 							<div class="modal-footer padd-footer">
