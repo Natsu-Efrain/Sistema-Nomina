@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-	<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.ArrayList"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -44,8 +44,7 @@
 
 			</section>
 		</nav>
-		<br>
-		<br>
+		<br> <br>
 	</header>
 
 	<div class="row">
@@ -160,27 +159,27 @@
 							</div>
 						</div>
 
-							<select class="custom-select my-1 mr-sm-2 col-5 mb-5"
-													id="puesto" name="puesto">
+						<select class="custom-select my-1 mr-sm-2 col-5 mb-5" id="puesto"
+							name="puesto">
+							<option selected disabled>Puestos</option>
+							<%
+								ArrayList<String> puestos = (ArrayList<String>) request.getAttribute("puestos");
+							int i = 0;
 
-													<%
-														ArrayList<String> puestos = (ArrayList<String>) request.getAttribute("puestos");
-													int i = 0;
+							for (int x = 0; x < puestos.size(); x++) {
+								i = i + 1;
 
-													for (int x=0;x<puestos.size();x++) {
-														i = i + 1;
-
-														out.print("<option value='" + i + "'>" + puestos.get(x) + "</option>");
-													}
-													%>
-												</select>
+								out.print("<option value='" + i + "'>" + puestos.get(x) + "</option>");
+							}
+							%>
+						</select>
 
 						<button type="submit" class="btn btn-primary">Agregar
 							Usuario</button>
 
 					</form>
 
-					
+
 
 				</div>
 
@@ -348,11 +347,11 @@
 													<option value="2">Quincenal</option>
 												</select>
 
-				
+
 
 												<!--  Dependiendo del area que se eligio se deberan cargar los puestos que existen en dicha area-->
 
-											
+
 
 											</div>
 
@@ -365,8 +364,7 @@
 
 						<button type="button" class="btn btn-primary" data-toggle="modal"
 							data-target="#edicionDatos">Confirmar Edición</button>
-						<br>
-						<br>
+						<br> <br>
 
 					</div>
 
