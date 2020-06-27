@@ -1,6 +1,7 @@
 package mx.com.sistema.nomina.back;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -38,14 +39,15 @@ public class edicionSistema extends HttpServlet {
 				ProcesosDB pdb=new ProcesosDB();
 				RequestDispatcher rd;
 				List<Datos_Agregar> listaPuestos;
-				//Obtencion de los datos del usuario en la BD
+				ArrayList<String>puestos=new ArrayList<String>();
+				//Obtencion de los datos del puesto en la BD
 				listaPuestos=pdb.consultaPuestos();
 				for (Datos_Agregar da : listaPuestos) {
 					
-					request.setAttribute("puestos", da.getNombre_puesto());
+					puestos.add(da.getNombre_puesto());
 
 				}
-				
+				request.setAttribute("puestos", puestos);
 				rd = request.getRequestDispatcher("/edicionSistema.jsp");
 				rd.forward(request, response);
 				

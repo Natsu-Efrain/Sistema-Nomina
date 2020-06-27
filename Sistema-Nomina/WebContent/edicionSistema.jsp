@@ -160,24 +160,27 @@
 							</div>
 						</div>
 
-						<select class="custom-select my-1 mr-sm-2 col-2 mb-3" id="area">
-							<option selected disabled>Seleccione Area</option>
-							<option value="1">Recursos Humanos</option>
-							<option value="2">Tecnologia</option>
-							<option value="3">Finanzas</option>
-							<option value="4">Comercial</option>
-						</select> <select class="custom-select my-1 mr-sm-2 col-2 mb-3" id="puesto">
-							<option selected disabled>Seleccione Puesto</option>
-							<option value="1">...</option>
-							<option value="2">...</option>
-						</select>
+							<select class="custom-select my-1 mr-sm-2 col-5 mb-5"
+													id="puesto" name="puesto">
 
+													<%
+														ArrayList<String> puestos = (ArrayList<String>) request.getAttribute("puestos");
+													int i = 0;
 
+													for (int x=0;x<puestos.size();x++) {
+														i = i + 1;
+
+														out.print("<option value='" + i + "'>" + puestos.get(x) + "</option>");
+													}
+													%>
+												</select>
+
+						<button type="submit" class="btn btn-primary">Agregar
+							Usuario</button>
 
 					</form>
 
-					<button type="button" class="btn btn-primary">Agregar
-						Usuario</button>
+					
 
 				</div>
 
@@ -349,20 +352,7 @@
 
 												<!--  Dependiendo del area que se eligio se deberan cargar los puestos que existen en dicha area-->
 
-												<select class="custom-select my-1 mr-sm-2 col-5 mb-5"
-													id="puesto" name="puesto">
-
-													<%
-														ArrayList<String> puestos = (ArrayList<String>) request.getAttribute("puestos");
-													int i = 0;
-
-													for (String puesto : puestos) {
-														i = i + 1;
-
-														out.print("<option value='" + i + "'>" + puesto + "</option>");
-													}
-													%>
-												</select>
+											
 
 											</div>
 
