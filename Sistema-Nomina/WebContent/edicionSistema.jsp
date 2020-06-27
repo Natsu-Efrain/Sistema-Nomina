@@ -73,73 +73,73 @@
 				<div class="tab-pane fade show active" id="v-pills-home"
 					role="tabpanel" aria-labelledby="v-pills-home-tab">
 
-					<form>
+					<form method="get" action="/Sistema-Nomina/AgregarEmpleado" onsubmit="return valforms(this)">
 						<h2>Datos Personales</h2>
 
 						<div class="form-row">
 							<div class="col-md-3 mb-3">
 								<label for="Nombre">Nombre</label> <input type="text"
-									class="form-control" id="Nombre" value="" required>
+									class="form-control" id="Nombre" name="Nombre" onChange="return valforms(this.form,this)" editcheck="type=ALPHA=Ingrese un nombre valido;" maxlength="25" value="" required>
 							</div>
 							<div class="col-md-2 mb-3">
 								<label for="ApellidoP">Apellido Paterno</label> <input
 									type="text" class="form-control" id="ApellidoP" value=""
-									required>
+									required name="ApellidoP" onChange="return valforms(this.form,this)" editcheck="type=ALPHA=Ingrese un apellido paterno valido;" maxlength="25">
 							</div>
 							<div class="col-md-2 mb-3">
 								<label for="ApellidoM">Apellido Materno</label> <input
 									type="text" class="form-control" id="ApellidoM" value=""
-									required>
+									required name="ApellidoM" onChange="return valforms(this.form,this)" editcheck="type=ALPHA=Ingrese un apellido materno valido;" maxlength="25">
 							</div>
 							<div class="col-md-2 mb-3">
-								<label for="ApellidoM">Numero Telefono</label> <input
-									type="number" class="form-control" id="ApellidoM" value=""
-									required>
+								<label for="Numero Telefono">Numero Telefono</label> <input
+									type="text" class="form-control" id="numeroTelefono" value=""
+									required name="numeroTelefono" onChange="return valforms(this.form,this)" editcheck="type=INT=Ingrese un numero valido;" maxlength="10" >
 							</div>
 						</div>
 
 						<div class="form-row">
 							<div class="col-md-5 mb-3">
 								<label for="calle">Calle</label> <input type="text"
-									class="form-control" id="calle" value="" required>
+									class="form-control" id="calle" value="" required name="calle" onChange="return valforms(this.form,this)" editcheck="type=alpha=Ingrese una calle valida;" maxlength="50">
 							</div>
 							<div class="col-md-2 mb-3">
 								<label for="numExt">Numero Exterior</label> <input type="text"
-									class="form-control" id="numExt" value="" required>
+									class="form-control" id="numExt" value="" required name="numeroExterior" onChange="return valforms(this.form,this)" editcheck="type=INT=Ingrese un numero exterior valido;" maxlength="4">
 							</div>
 							<div class="col-md-2 mb-3">
 								<label for="colonia">Colonia</label> <input type="text"
-									class="form-control" id="colonia" value="" required>
+									class="form-control" id="colonia" value="" required name="colonia" onChange="return valforms(this.form,this)" editcheck="type=alpha=Ingrese una colonia valida;" maxlength="25">
 							</div>
 						</div>
 
 						<div class="form-row">
 							<div class="col-md-2 mb-3">
 								<label for="calle">Delegacion</label> <input type="text"
-									class="form-control" id="calle" value="" required>
+									class="form-control" id="delegacion" value="" required name="delegacion" onChange="return valforms(this.form,this)" editcheck="type=alpha=Ingrese una delegacion valida;" maxlength="25">
 							</div>
 							<div class="col-md-2 mb-3">
 								<label for="numExt">Estado</label> <input type="text"
-									class="form-control" id="numExt" value="" required>
+									class="form-control" id="estado" value="" required name="estado" onChange="return valforms(this.form,this)" editcheck="type=alpha=Ingrese un estado valido;" maxlength="25">
 							</div>
 							<div class="col-md-1 mb-3">
 								<label for="colonia">C.P.</label> <input type="number"
-									class="form-control" id="colonia" value="" required>
+									class="form-control" id="CP" value="" required name="CP" onChange="return valforms(this.form,this)" editcheck="type=INT=Ingrese un codigo postal valido;" maxlength="5">
 							</div>
 						</div>
 
-					</form>
+				
 					<br>
 					<h2>Datos Empresariales</h2>
 
-					<form>
+					
 						<select class="custom-select my-1 mr-sm-2 col-2 mb-3"
-							id="claseEmpleado">
+							id="claseEmpleado" name="claseEmpleado">
 							<option selected disabled>Clase Empleado</option>
 							<option value="1">Confianza</option>
 							<option value="2">Base</option>
 						</select> <select class="custom-select my-1 mr-sm-2 col-2 mb-3"
-							id="tipoPago">
+							id="tipoPago" name=tipoPago>
 							<option selected disabled>Tipo Pago</option>
 							<option value="1">Semanal</option>
 							<option value="2">Quincenal</option>
@@ -155,7 +155,7 @@
 
 							<div class="col-md-3 mb-3">
 								<label for="correo">Correo</label> <input type="text"
-									class="form-control" id="correo" value="" required>
+									class="form-control" id="correo" value="" required name="correo" onChange="return valforms(this.form,this)" editcheck="type=email=Ingrese un correo valido;" maxlength="30">
 							</div>
 						</div>
 <!-- Se genera una lista depegable de forma dinamica -->
