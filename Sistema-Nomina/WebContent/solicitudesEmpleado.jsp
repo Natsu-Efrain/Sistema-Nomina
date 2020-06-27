@@ -45,6 +45,7 @@
     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
       <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Vacaciones</a>
       <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Prestamo</a>
+      <a class="nav-link" id="fondoAhorro-tab" data-toggle="pill" href="#fondoAhorro" role="tab" aria-controls="fondoAhorro" aria-selected="false">Fondo Ahorro</a>    
     </div>
   </div>
     
@@ -122,10 +123,8 @@
     </div>
   </div> <br><br>
           
-          <h3>Solicitar Prestamo</h3>
-          
-          <form onsubmit="return valforms(this)">
-              
+          <h3>Solicitar Prestamo</h3> 
+          <form onsubmit="return valforms(this)">  
               <div class="form-row">
                   <div class="col-md-3 mb-2">
                     <label for="montoPrestamo">Solicite Monto (Max. 5000)</label>
@@ -139,14 +138,57 @@
                     <label for="pagoPrestamo">Pago por Mensualidad</label>
                       <input type="text" class="form-control" name="pagoPrestamo" id="pagoPrestamo" disabled>
                    </div>
-              </div>
-              
+              </div>         
               <input type="button" value="Calcular" class="btn btn-primary">       
              <input type="button" value="Solicitar Prestamo" class="btn btn-primary" data-toggle="modal" data-target="#solicitudPrestamo"> 
-              
           </form>
-          
       </div>
+        
+        <!--  Tercer Pill - Fondo de AHorro-->
+        
+        <div class="tab-pane fade" id="fondoAhorro" role="tabpanel" aria-labelledby="fondoAhorro-tab">
+        
+      <h2>Fondo de Ahorro</h2><br>
+          <h3>Fondo de Ahorro Activo</h3>
+          
+          <div class="form-row">
+              
+              <div class="col-md-2 mb-2">
+               <label for="fondoActivo">¿Fondo Activo?</label>
+                <input type="text" class="form-control" id="fondoActivo" name="fondoActivo" value="" disabled>
+             </div>
+              
+          </div>
+  
+    <div class="form-row">
+    <div class="col-md-2 mb-2">
+      <label for="montoMensual">Fondo Mensual</label>
+      <input type="text" class="form-control" id="montoMensual" name="montoMensual" value="" disabled>
+    </div>
+    <div class="col-md-2 mb-2">
+      <label for="fonfoAcum">Fondo Acumulado</label>
+      <input type="text" class="form-control" id="fondoAcum" name="fondoAcum" value="" disabled>
+    </div>
+  </div> <br><br>
+          
+          <h3>Solicitar Fondo de Ahorro</h3> 
+          <form onsubmit="return valforms(this)">  
+              <div class="form-row">
+                  <div class="col-md-3 mb-2">
+                    <label for="montoFondo">Fondo Mensual (Max. 13% del Salario)</label>
+                      <input type="text" class="form-control" name="montoFondo" id="montoFondo" size="20" maxlength="25" onchange="return valforms(this.form,this)" editcheck="type=num;req=Y=Inserte el mondo para el Fondo de Ahorro;cvt=UTC">
+                   </div>                     
+                  <div class="col-md-2 mb-2">
+                    <label for="fondoMaximo">Fondo Maximo</label>
+                      <input type="text" class="form-control" name="fondoMaximo" id="fondoMaximo" disabled>
+                   </div>
+              </div>         
+              <input type="button" value="Calcular Maximo" class="btn btn-primary">       
+             <input type="button" value="Solicitar Fondo de Ahorro" class="btn btn-primary" data-toggle="modal" data-target="#solicitudFondo"> 
+          </form>
+      </div>
+        
+
         
     </div>
   </div>
@@ -191,6 +233,31 @@
       </div>
       <div class="modal-body">
         Usted va a solicitar un prestamo. Este se le descontara de su nomina.<br> ¿Desea continuar?
+      </div>
+      <div class="modal-footer" style="padding-top: 10px; padding-bottom: 15px;">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary">Aceptar</button>
+      </div>
+    </div>
+  </div>
+        
+    </div>
+    
+    <!-- Modal - Solicitud Fondo de Ahorro -->
+    
+    <div class="portfolio-modal modal fade" id="solicitudFondo" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="portfolioModal1Label" aria-hidden="true">
+    
+         <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Confirmacion Fondo de Ahorro</h5>
+          <hr>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Una vez aceptado el fondo de ahorro este no se podra retirar.<br> ¿Esta seguro que desea continuar?
       </div>
       <div class="modal-footer" style="padding-top: 10px; padding-bottom: 15px;">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
