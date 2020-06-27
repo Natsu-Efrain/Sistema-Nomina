@@ -345,16 +345,7 @@
 													<option value="2">Quincenal</option>
 												</select>
 
-												<!--  Aqui se deberan cargar las areas existentes-->
-
-												<select class="custom-select my-1 mr-sm-2 col-5 mb-5"
-													id="area">
-													<option selected disabled>Seleccione Area</option>
-													<option value="1">Recursos Humanos</option>
-													<option value="2">Tecnologia</option>
-													<option value="3">Finanzas</option>
-													<option value="4">Comercial</option>
-												</select>
+				
 
 												<!--  Dependiendo del area que se eligio se deberan cargar los puestos que existen en dicha area-->
 
