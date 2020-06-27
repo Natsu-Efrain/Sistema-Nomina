@@ -46,6 +46,7 @@ public class Login extends HttpServlet {
     static String correo;
 	static String idEmpleado;
 	static String contrasena;
+	static String id_puesto;
 	//Controlador del JSP
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
@@ -63,6 +64,7 @@ public class Login extends HttpServlet {
 		{
 		for(Usuario usr:listaUsuario) {
 				idEmpleado=usr.getId_empleado();
+				id_puesto=usr.getId_puesto();
                 if(Integer.parseInt(usr.getId_puesto())>=101&&Integer.parseInt(usr.getId_puesto())<=200)
                 {
 				rd=request.getRequestDispatcher("/menu.jsp");
