@@ -112,4 +112,33 @@ package mx.com.sistema.nomina.DB;
 			desconectar();
 			return listadoInformacion;
 		}
+		//Se guardan los datos de puestos para la vista de agregar usuario
+		public List<Datos_Agregar> consultaPuestos() {
+			connectDatabase();
+			List<Datos_Agregar> listadoPuestos = new ArrayList<Datos_Agregar>();
+			try {
+
+				Statement stm = connection.createStatement();
+				ResultSet rs = stm.executeQuery(
+						"select id_puesto,nombre_puesto from Puesto;");
+
+				while (rs.next()) {
+					Datos_Agregar DA = new Datos_Agregar();
+					DA.setId_puesto(rs.getString("id_puesto"));
+					DA.setNombre_puesto(rs.getString("nombre_puesto"));
+					listadoPuestos.add(DA);
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+				
+				
+				
+				
+				
+
+			}
+			desconectar();
+			return listadoPuestos;
+		}
+			
 }
