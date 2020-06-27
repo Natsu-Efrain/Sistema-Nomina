@@ -129,12 +129,7 @@ package mx.com.sistema.nomina.DB;
 					listadoPuestos.add(DA);
 				}
 			} catch (Exception e) {
-				e.printStackTrace();
-				
-				
-				
-				
-				
+				e.printStackTrace();	
 
 			}
 			desconectar();

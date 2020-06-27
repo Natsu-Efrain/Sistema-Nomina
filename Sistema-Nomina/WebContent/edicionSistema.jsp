@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	<%@ page import="java.util.ArrayList" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -361,7 +362,7 @@
 													id="puesto" name="puesto">
 
 													<%
-														ArrayList<String> puestos = (ArrayList<String>).request.getAttribute("puestos");
+														ArrayList<String> puestos = (ArrayList<String>) request.getAttribute("puestos");
 													int i = 0;
 
 													for (String puesto : puestos) {
