@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import mx.com.sistema.nomina.Bin.Correo;
 import mx.com.sistema.nomina.Bin.Usuario;
-import mx.com.sistema.nomina.DB.ProcedimentoDB;
+import mx.com.sistema.nomina.DB.ProcesosDB;
 
 /**
  * Servlet implementation class recuperarPassword
@@ -43,7 +43,7 @@ public class recuperarPassword extends HttpServlet {
 		String mensaje="";
 		String asunto = "Recuperacion de contraseña";
 		RequestDispatcher rd;
-		ProcedimentoDB pdb=new ProcedimentoDB();
+		ProcesosDB pdb=new ProcesosDB();
 		List<Usuario> listaUsuario;
 		Correo cr=new Correo();
 		

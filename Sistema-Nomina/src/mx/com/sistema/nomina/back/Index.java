@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import mx.com.sistema.nomina.Bin.Usuario;
-import mx.com.sistema.nomina.DB.ProcedimentoDB;
+import mx.com.sistema.nomina.DB.ProcesosDB;
 import mx.com.sistema.nomina.back.*;
 /**
  * Servlet implementation class Index
@@ -37,7 +37,7 @@ public class Index extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//Se inicializa variables
-		ProcedimentoDB pdb=new ProcedimentoDB();
+		ProcesosDB pdb=new ProcesosDB();
 		RequestDispatcher rd;
 		List<Usuario> listaUsuario;
 		//Obtencion de los datos del usuario en la BD

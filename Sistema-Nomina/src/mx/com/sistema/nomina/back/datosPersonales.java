@@ -9,7 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import mx.com.sistema.nomina.DB.ProcedimentoDB;
+
+import mx.com.sistema.nomina.DB.ProcesosDB;
 
 /**
  * Servlet implementation class datosPersonales
@@ -43,7 +44,7 @@ public class datosPersonales extends HttpServlet {
 		System.out.print(id_empleado);
 		
 		//Se realiza la modificacion en la BD de los datos del empleado
-		ProcedimentoDB DB=new ProcedimentoDB();
+		ProcesosDB DB=new ProcesosDB();
 		DB.actualizaInformaciondatosPersonales(num_telefono, calle, num_exterior, colonia, delegacion, estado, codigo_postal, id_empleado);
 	    //Se limpia los datos de 
 		//Se recarga la ventana para poder vizualisar el cambio

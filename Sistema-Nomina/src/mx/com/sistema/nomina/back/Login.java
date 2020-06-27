@@ -19,7 +19,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import mx.com.sistema.nomina.Bin.*;
-import mx.com.sistema.nomina.DB.ProcedimentoDB;
+import mx.com.sistema.nomina.DB.ProcesosDB;
+
 
 
 
@@ -53,7 +54,7 @@ public class Login extends HttpServlet {
 		correo=email;
 		contrasena=password;
 		RequestDispatcher rd;
-		ProcedimentoDB pdb=new ProcedimentoDB();
+		ProcesosDB pdb=new ProcesosDB();
 		
         List<Usuario> listaUsuario;
 		
