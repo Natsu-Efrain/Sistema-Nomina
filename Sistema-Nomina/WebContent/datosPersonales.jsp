@@ -225,49 +225,49 @@
 				<div class="modal-body">
 
 
-					<form method="get" action="/Sistema-Nomina/Index" onsubmit="return valforms(this)">
+					<form method="get" action="/Sistema-Nomina/datosPersonales" onsubmit="return valforms(this)">
 						<div class="form-group row">
 					
 							<label for="numTelefono" class="col-sm-4 col-form-label">Numero
 								Telefono:</label>
 							<div class="col-sm-8">
 								<input type="text" class="form-control" id="numTelefono"
-									name="numTelefono" onChange="return valforms(this.form,this)" editcheck="minlen=10=&iexcl;Ingrese un numero de telefono valido;type=int" maxlength="10">
+									name="numTelefono" required="required" onChange="return valforms(this.form,this)" editcheck="minlen=10=&iexcl;Ingrese un numero de telefono valido;type=int" maxlength="10">
 									
 							</div>
 							<br> <br> <label for="calle"
 								class="col-sm-4 col-form-label">Calle</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" id="calle" name="calle" onChange="return valforms(this.form,this)" editcheck="minlen=10=&iexcl;Ingrese una calle valida;type=ALPHA" maxlength="50">
+								<input type="text" class="form-control" id="calle" name="calle" required="required" onChange="return valforms(this.form,this)" editcheck="type=ALPHA=Ingrese una calle colonia;" maxlength="50">
 							</div>
 							<br> <br> <label for="numExterior"
 								class="col-sm-4 col-form-label">Numero Ext</label>
 							<div class="col-sm-8">
 								<input type="text" class="form-control" id="numeroExterior"
-									name="numeroExterior" onChange="return valforms(this.form,this)" editcheck="type=int=Ingresa un numero de exterior valido;cvt=~" maxlength="4" >
+									name="numeroExterior" onChange="return valforms(this.form,this)" required="required" editcheck="type=int=Ingresa un numero de exterior valido;" maxlength="4" >
 							</div>
 							<br> <br> <label for="colonia"
 								class="col-sm-4 col-form-label">Colonia</label>
 							<div class="col-sm-8">
 								<input type="text" class="form-control" id="colonia"
-									name="colonia" onChange="return valforms(this.form,this)" editcheck="type=ALPHA=Ingrese una delegacion valida;cvt=~" maxlength="25">
+									name="colonia" onChange="return valforms(this.form,this)" required="required" editcheck="type=ALPHA=Ingrese una delegacion colonia;" maxlength="25">
 							</div>
 							<br> <br> <label for="delegacion"
 								class="col-sm-4 col-form-label">Delegacion</label>
 							<div class="col-sm-8">
 								<input type="text" class="form-control" id="delegacion"
-									name="delegacion" onChange="return valforms(this.form,this)" editcheck="type=ALPHA=Ingrese una delegacion valida;cvt=~" maxlength="25">
+									name="delegacion" onChange="return valforms(this.form,this)" required="required" editcheck="type=ALPHA=Ingrese una delegacion valida;" maxlength="25">
 							</div>
 							<br> <br> <label for="estado"
 								class="col-sm-4 col-form-label">Estado</label>
 							<div class="col-sm-8">
 								<input type="text" class="form-control" id="estado"
-									name="estado" onChange="return valforms(this.form,this)" editcheck="type=ALPHA=Ingrese una estado valida;cvt=~" maxlength="25">
+									name="estado" onChange="return valforms(this.form,this)" required="required" editcheck="type=ALPHA=Ingrese una estado valida;" maxlength="25">
 							</div>
 							<br> <br> <label for="CP"
 								class="col-sm-4 col-form-label">C.P</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" id="CP" name="CP" onChange="return valforms(this.form,this)" editcheck="type=int=Ingrese una codigo postal valido;cvt=~" maxlength="5">
+								<input type="text" class="form-control" id="CP" name="CP" required="required" onChange="return valforms(this.form,this)" editcheck="type=int=Ingrese una codigo postal valido;" maxlength="5">
 							</div>
 
 							<div class="modal-footer padd-footer">
