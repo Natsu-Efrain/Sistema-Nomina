@@ -61,9 +61,16 @@ public class Index extends HttpServlet {
 			request.setAttribute("puesto", usr.getPuesto());
 			request.setAttribute("area", usr.getArea());
 		}
-		
+		if(Integer.parseInt(Login.idEmpleado)>=101&&Integer.parseInt(Login.idEmpleado)<=200)
+		{
 		rd = request.getRequestDispatcher("/datosPersonales.jsp");
 		rd.forward(request, response);
+		}
+		else
+		{
+			rd = request.getRequestDispatcher("/datosPersonalesEmpleado.jsp");
+			rd.forward(request, response);
+		}
 	}
 
 	/**

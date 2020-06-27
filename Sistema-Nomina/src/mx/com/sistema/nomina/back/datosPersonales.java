@@ -48,9 +48,12 @@ public class datosPersonales extends HttpServlet {
 		DB.actualizaInformaciondatosPersonales(num_telefono, calle, num_exterior, colonia, delegacion, estado, codigo_postal, id_empleado);
 	    //Se limpia los datos de 
 		//Se recarga la ventana para poder vizualisar el cambio
+		
 		RequestDispatcher rd;
 		rd = request.getRequestDispatcher("/Index");
 		rd.forward(request, response);
+		
+	
 	}
 
 	/**

@@ -28,8 +28,7 @@
 				</div>
 				<div class="enlaces-header">
 					<a href="menu.jsp">Inicio</a> <a href="/Sistema-Nomina/Index">Datos
-						personales</a> <a href="#" data-toggle="modal"
-						data-target="#exampleModal">Empleados</a> <a href="nomina.html">Calculo
+						personales</a> <a href="edicionSistema.jsp">Sistema</a> <a href="nomina.html">Calculo
 						Nomina</a> <a href="finiquito.html">Finiquitos y Liquidaciones</a> <a
 						href="catalogoMenu.html">Catálogo</a>
 				</div>
