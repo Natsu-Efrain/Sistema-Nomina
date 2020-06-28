@@ -49,13 +49,37 @@ public class edicionSistema extends HttpServlet {
 					puestos.add(da.getNombre_puesto());
 
 				}
+				//Obtencion de las areas en la BD
+				List<Datos_Agregar> listaAreas;
+				ArrayList<String>areas=new ArrayList<String>();
+				//Obtencion de los datos del puesto en la BD
+				listaAreas=pdb.consultaAreas();
+				for (Datos_Agregar da : listaAreas) {
+					
+					areas.add(da.getNombre_area());	
+				}
 				
+				
+				request.setAttribute("areas", areas);
 				request.setAttribute("puestos", puestos);
 				Calendar fecha = new GregorianCalendar();
 				int año = fecha.get(Calendar.YEAR); 
 				int mes=fecha.get(Calendar.MONTH)+1;
 				int dia=fecha.get(Calendar.DAY_OF_MONTH);
 				System.out.println(año+"-"+mes+"-"+dia);
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
 				request.setAttribute("fecha_ingreso",año+"-"+mes+"-"+dia);
 				rd = request.getRequestDispatcher("/edicionSistema.jsp");
 				rd.forward(request, response);

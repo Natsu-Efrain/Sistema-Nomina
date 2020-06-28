@@ -183,6 +183,72 @@ import java.sql.Connection;
 					return listadoInformacionPuesto;
 				}
 				
+				//Se guardan los datos de puestos para la vista de agregar areas
+				public List<Datos_Agregar> consultaAreas() {
+					connectDatabase();
+					List<Datos_Agregar> listadoAreas = new ArrayList<Datos_Agregar>();
+					try {
+
+						Statement stm = connection.createStatement();
+						ResultSet rs = stm.executeQuery(
+								"select id_area,nombre_area from Area;");
+
+						while (rs.next()) {
+							Datos_Agregar DA = new Datos_Agregar();
+							DA.setNombre_area(rs.getString("nombre_area"));
+							DA.setId_area(rs.getString("id_area"));
+							listadoAreas.add(DA);
+						}
+					} catch (Exception e) {
+						e.printStackTrace();	
+
+					}
+					desconectar();
+					return listadoAreas;
+				}
 				
+				
+				//Metodo para poder recuperar la informacion del jsp Recuperar Id_puesto
+				public List<Datos_Agregar> consultaId_Area(String nombre_area) {
+					connectDatabase();
+					List<Datos_Agregar> listadoInformacionArea = new ArrayList<Datos_Agregar>();
+					try {
+
+						Statement stm = connection.createStatement();
+						ResultSet rs = stm.executeQuery(
+								"select * from Area where nombre_puesto='"
+										+ nombre_area + "';");
+
+						while (rs.next()) {
+							Datos_Agregar usr = new Datos_Agregar();
+							usr.setId_area((rs.getString("id_area")));
+							listadoInformacionArea.add(usr);
+						}
+					} catch (Exception e) {
+						e.printStackTrace();
+
+					}
+					desconectar();
+					return listadoInformacionArea;
+				}
+				
+				
+				// Metodo para agregar puesto
+				public void insercionInformacionPuesto(String Id_area,String nombre_puesto,String salario,String Horas) {
+					connectDatabase();
+
+					try {
+
+						Statement stm = connection.createStatement();
+						
+
+						stm.execute("INSERT INTO Puesto VALUES (Default,"+Id_area+",'"+nombre_puesto+"',"+salario+","+Horas+");");
+                     
+						System.out.println("Se registro correctamente");
+					} catch (Exception e) {
+						System.out.println(e);
+					}
+					desconectar();
+				}	
 
 }

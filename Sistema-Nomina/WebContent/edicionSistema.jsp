@@ -164,7 +164,7 @@
 
 						<!-- Añadido onchange para cargar los tipo_pagos -->
 						<select class="custom-select my-1 mr-sm-2 col-5 mb-5" name="clase"
-							id="clase" onchange="cargaTipo_Pago();">
+							id="clase" onchange="cargaTipo_Pago();" required="required">
 							<!-- Hay que terminar los options -->
 							<!-- 
                    Eliminado de value la llamada a la función,
@@ -172,7 +172,8 @@
                    lo haga es totalmente innecesario, 
                    lo correcto es usar el evento onchange 
                 -->
-							<option value="" disabled="disabled">Seleccione una clase...</option>
+							<option value="" disabled="disabled">Seleccione una
+								clase...</option>
 						</select> <select class="custom-select my-1 mr-sm-2 col-5 mb-5"
 							name="tipo_pago" id="tipo_pago">
 							<!-- Hay que terminar los options -->
@@ -182,7 +183,8 @@
                    lo haga es totalmente innecesario, 
                    lo correcto es usar el evento onchange 
                 -->
-							<option value="" disabled="disabled">Seleccione un tipo_pago...</option>
+							<option value="" disabled="disabled">Seleccione un
+								tipo_pago...</option>
 						</select>
 
 						<div class="col-md-2 mb-3">
@@ -225,7 +227,9 @@
 						</select> <br>
 						<!-- Añadido onchange para cargar los Tipo_Infonavits -->
 						<select name="infonavit" id="infonavit"
-							onchange="cargaTipo_Infonavit();" class="custom-select my-1 mr-sm-2 col-5 mb-5" name="clase">
+							onchange="cargaTipo_Infonavit();"
+							class="custom-select my-1 mr-sm-2 col-5 mb-5" name="clase"
+							required="required">
 							<!-- Hay que terminar los options -->
 							<!-- 
                    Eliminado de value la llamada a la función,
@@ -235,7 +239,8 @@
                 -->
 							<option value="" disabled="disabled">Seleccione si tiene
 								infonavit...</option>
-						</select> <select name="Tipo_Infonavit" id="Tipo_Infonavit" class="custom-select my-1 mr-sm-2 col-5 mb-5" name="clase">
+						</select> <select name="Tipo_Infonavit" id="Tipo_Infonavit"
+							class="custom-select my-1 mr-sm-2 col-5 mb-5" name="clase">
 							<!-- Hay que terminar los options -->
 							<!-- 
                    Eliminado de value la llamada a la función,
@@ -245,7 +250,15 @@
                 -->
 							<option value="" disabled="disabled">Seleccione un Tipo
 								de Infonavit...</option>
-						</select> <br> <br>
+						</select>
+						<div class="col-md-3 mb-3">
+							<label for="info">Indica parametro de infonavit</label> <input
+								type="text" class="form-control" id="info" value="" required
+								name="info" onChange="return valforms(this.form,this)"
+								editcheck="type=NUM=Ingrese un parametro valido;" maxlength="3">
+						</div>
+
+						<br> <br>
 						<button type="submit" class="btn btn-primary">Agregar
 							Usuario</button>
 
@@ -262,37 +275,57 @@
 
 					<h2>Creación de Puestos</h2>
 
-					<form>
-						<select class="custom-select my-1 mr-sm-2 col-2 mb-3" id="area">
-							<option selected disabled>Seleccione Area</option>
-							<option value="1">Recursos Humanos</option>
-							<option value="2">Tecnologia</option>
-							<option value="3">Finanzas</option>
-							<option value="4">Comercial</option>
-						</select>
+					<form method="get" action="/Sistema-Nomina/AgregarPuesto"
+						onsubmit="return valforms(this)">
+						<!-- Se genera una lista depegable de forma dinamica -->
+						<label for="Areas">Areas</label> <br> <select
+							class="custom-select my-1 mr-sm-2 col-5 mb-5" id="nombre_area"
+							name="nombre_area" required>
+							<%
+								ArrayList<String> areas = (ArrayList<String>) request.getAttribute("areas");
+							int zm = 0;
+
+							for (int x = 0; x < areas.size(); x++) {
+								zm = zm + 1;
+
+								out.print("<option value='" + areas.get(x) + "'>" + areas.get(x) + "</option>");
+							}
+							%>
+						</select> <br>
 
 						<div class="form-row">
 							<div class="col-md-3 mb-3">
 								<label for="nombrePuesto">Nombre del Puesto</label> <input
 									type="text" class="form-control" id="nombrePuesto" value=""
-									required>
+									required name="nombrePuesto"
+									onChange="return valforms(this.form,this)"
+									editcheck="type=alpha=Ingrese un nombre de puesto;">
 							</div>
 							<div class="col-md-2 mb-3">
-								<label for="salarioPuesto">Salario del Puesto</label> <input
-									type="number" class="form-control" id="salarioPuesto" value=""
-									required>
+								<label for="Salario">Salario del Puesto</label> <input
+									type="text" class="form-control" id="Salario" value="" required
+									name="Salario" onChange="return valforms(this.form,this)"
+									editcheck="type=NUM=Ingrese un parametro salario valido;">
 							</div>
-							<div class="col-md-2 mb-3">
-								<label for="horas">Horas de Jornada</label> <input type="text"
-									class="form-control" id="horas" value="" required>
-							</div>
-						</div>
+				</div>
+							<label for="Salario">Horas</label> 
+							<br>
+							<select class="custom-select my-1 mr-sm-2 col-5 mb-5" id="Horas" name="Horas">
+								<option selected disabled>Seleccion el numero de horas</option>
+								<option value="4" >4 Horas diarias</option>
+								<option value="5" >5 Horas diarias</option>
+								<option value="6" >6 Horas diarias</option>
+								<option value="7" >7 Horas diarias</option>
+								<option value="8" >8 Horas diarias</option>
+							</select>
+					
+						
 
+
+<br>
+						<button type="submit" class="btn btn-primary" data-toggle="modal"
+							data-target="#creacionPuesto">Agregar nuevo puesto</button>
 					</form>
-
-					<button type="button" class="btn btn-primary" data-toggle="modal"
-						data-target="#creacionPuesto">Agregar nuevo puesto</button>
-
 				</div>
 
 				<!-- Creacion del tercel Pill - Creacion de Nuevas Areas -->
@@ -450,31 +483,7 @@
 	<!-- Portfolio Modal 1 -->
 
 
-	<!-- Portfolio Modal - Modulo no terminado -->
 
-	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-		aria-labelledby="staticBackdropLabel" aria-hidden="true">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="staticBackdropLabel">Aviso!!</h5>
-				</div>
-				<div class="modal-body1">Hay dos modulos que no estan
-					diseñados. Este es uno de ellos :C</div>
-				<br>
-				<div class="modal-footer1">
-
-					<div class="btn-group" role="group" aria-label="Basic example">
-						<button type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
-						<button type="button" class="btn btn-secondary"
-							data-dismiss="modal">Cancelar</button>
-
-					</div>
-
-				</div>
-			</div>
-		</div>
-	</div>
 
 
 
@@ -591,6 +600,6 @@
 	<!-- Custom scripts for this template -->
 	<script src="js/freelancer.min.js"></script>
 	<script src="js/clase.js"></script>
-	<script src="js/infonavit.js"></script>  
+	<script src="js/infonavit.js"></script>
 </body>
 </html>
