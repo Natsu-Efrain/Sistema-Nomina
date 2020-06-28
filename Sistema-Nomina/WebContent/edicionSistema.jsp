@@ -1,3 +1,4 @@
+<%@page import="javax.swing.JOptionPane"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ page import="java.util.ArrayList"%>
@@ -28,7 +29,11 @@
 <script type="text/javascript" src="js/editcheck.js"></script>
 </head>
 <body id="page-top">
-
+<%
+							String error =(String)request.getAttribute("error");
+							if(error!=null)
+								
+							%>
 	<header>
 		<nav>
 			<section class="contenedor nav">
@@ -483,123 +488,5 @@
 	<!-- Portfolio Modal 1 -->
 
 
-
-
-
-
-	<!-- Modal - Creacion de puesto -->
-
-	<div class="modal fade" id="creacionPuesto" tabindex="-1" role="dialog"
-		aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Confirmacion
-						Puesto</h5>
-					<hr>
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					Se va a crear un nuevo puesto <br> ¿Quiere continuar?
-				</div>
-				<div class="modal-footer"
-					style="padding-top: 10px; padding-bottom: 15px;">
-					<button type="button" class="btn btn-secondary"
-						data-dismiss="modal">Cancelar</button>
-					<button type="button" class="btn btn-primary">Aceptar</button>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-- Modal - Creacion de Areas -->
-
-	<div class="portfolio-modal modal fade" id="creacionArea"
-		data-backdrop="static" tabindex="-1" role="dialog"
-		aria-labelledby="portfolioModal1Label" aria-hidden="true">
-
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Confirmacion
-						Area</h5>
-					<hr>
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					Se va a crear una nueva Area<br> ¿Quiere continuar?
-				</div>
-				<div class="modal-footer"
-					style="padding-top: 10px; padding-bottom: 15px;">
-					<button type="button" class="btn btn-secondary"
-						data-dismiss="modal">Cancelar</button>
-					<button type="button" class="btn btn-primary">Aceptar</button>
-				</div>
-			</div>
-		</div>
-
-	</div>
-
-
-	<!-- Modal - Edicion de Datos -->
-
-	<div class="portfolio-modal modal fade" id="edicionDatos"
-		data-backdrop="static" tabindex="-1" role="dialog"
-		aria-labelledby="edicionDatos" aria-hidden="true">
-
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Confirmacioón</h5>
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					Se van a modificar los datos<br> ¿Quiere continuar?
-				</div>
-				<div class="modal-footer"
-					style="padding-top: 10px; padding-bottom: 15px;">
-					<button type="button" class="btn btn-secondary"
-						data-dismiss="modal">Cancelar</button>
-					<button type="button" class="btn btn-primary">Aceptar</button>
-				</div>
-			</div>
-		</div>
-
-	</div>
-
-
-
-	<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
-	<div class="scroll-to-top d-lg-none position-fixed ">
-		<a class="js-scroll-trigger d-block text-center text-white rounded"
-			href="#page-top"> <i class="fa fa-chevron-up"></i>
-		</a>
-	</div>
-
-
-	<!-- Bootstrap core JavaScript -->
-	<script src="vendor/jquery/jquery.min.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-	<!-- Plugin JavaScript -->
-	<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-	<!-- Contact Form JavaScript -->
-	<script src="js/jqBootstrapValidation.js"></script>
-	<script src="js/contact_me.js"></script>
-
-	<!-- Custom scripts for this template -->
-	<script src="js/freelancer.min.js"></script>
-	<script src="js/clase.js"></script>
-	<script src="js/infonavit.js"></script>
 </body>
 </html>
