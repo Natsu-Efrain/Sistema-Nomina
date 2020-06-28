@@ -51,7 +51,7 @@
 
 	</header>
 
-	<div class="container" style="padding-top: 30px;">
+		<div class="container" style="padding-top: 30px;">
 
 		<div class="row">
 			<div class="col-lg-4 mb-4">
@@ -63,37 +63,39 @@
 							<label for="idEmpleado" class="col-sm-4 col-form-label">Id
 								Empleado</label>
 							<div class="col-sm-8">
-								<input type="number" class="form-control" id="idEmpleado"
-									disabled value="${IdEmpleado}">
+								<input type="text" class="form-control" id="idEmpleado"
+									disabled value="${IdEmpleado}" >
 							</div>
 
 							<label for="nombre" class="col-sm-4 col-form-label">Nombre</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" id="nombre" disabled value="${nombre}">
+								<input type="text" class="form-control" id="nombre" disabled
+									value="${nombre}">
 							</div>
 
 							<label for="apellidoP" class="col-sm-4 col-form-label">Apellido
 								Paterno</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" id="apellidoP" disabled value="${apellidoP}">
+								<input type="text" class="form-control" id="apellidoP" disabled
+									value="${apellidoP}">
 							</div>
 
 							<label for="apellidoM" class="col-sm-4 col-form-label">Apellido
 								Materno</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" id="apellidoM" disabled value="${apellidoM}">
+								<input type="text" class="form-control" id="apellidoM" disabled
+									value="${apellidoM}">
 							</div>
 
 							<label for="numTelefono" class="col-sm-4 col-form-label">Numero
 								Telefono</label>
 							<div class="col-sm-8">
-								<input type="number" class="form-control" id="numTelefono"
+								<input type="text" class="form-control" id="numTelefono"
 									disabled value="${numTelefono}">
 							</div>
 						</div>
 
 					</div>
-
 				</div>
 			</div>
 
@@ -106,7 +108,8 @@
 						<div class="form-group row">
 							<label for="calle" class="col-sm-4 col-form-label">Calle</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" id="calle" disabled value="${calle}">
+								<input type="text" class="form-control" id="calle" disabled
+									value="${calle}">
 							</div>
 
 							<label for="numExterior" class="col-sm-4 col-form-label">Numero
@@ -118,22 +121,26 @@
 
 							<label for="colonia" class="col-sm-4 col-form-label">Colonia</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" id="colonia" disabled value="${colonia}">
+								<input type="text" class="form-control" id="colonia" disabled
+									value="${colonia}">
 							</div>
 
 							<label for="delegacion" class="col-sm-4 col-form-label">Delegacion</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" id="delegacion" disabled value="${delegacion}">
+								<input type="text" class="form-control" id="delegacion" disabled
+									value="${delegacion}">
 							</div>
 
 							<label for="estado" class="col-sm-4 col-form-label">Estado</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" id="estado" disabled value="${estado}">
+								<input type="text" class="form-control" id="estado" disabled
+									value="${estado}">
 							</div>
 
 							<label for="CP" class="col-sm-4 col-form-label">C.P</label>
 							<div class="col-sm-8">
-								<input type="number" class="form-control" id="CP" disabled value="${CP}">
+								<input type="text" class="form-control" id="CP" disabled
+									value="${CP}">
 							</div>
 
 						</div>
@@ -151,13 +158,15 @@
 						<div class="form-group row">
 							<label for="claseE" class="col-sm-4 col-form-label">Clase</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" id="claseE" disabled value="${claseE}">
+								<input type="text" class="form-control" id="claseE" disabled
+									value="${claseE}">
 							</div>
 
 							<label for="tipoPago" class="col-sm-4 col-form-label">Tipo
 								Pago</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" id="tipoPago" disabled value="${tipoPago}">
+								<input type="text" class="form-control" id="tipoPago" disabled
+									value="${tipoPago}">
 							</div>
 
 							<label for="fechaIngreso" class="col-sm-4 col-form-label">Fecha
@@ -169,12 +178,14 @@
 
 							<label for="puesto" class="col-sm-4 col-form-label">Puesto</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" id="puesto" disabled value="${puesto}">
+								<input type="text" class="form-control" id="puesto" disabled
+									value="${puesto}">
 							</div>
 
 							<label for="area" class="col-sm-4 col-form-label">Area</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" id="area" disabled value="${Area}">
+								<input type="text" class="form-control" id="area" disabled
+									value="${area}">
 							</div>
 
 						</div>
@@ -186,42 +197,21 @@
 
 		<button type="button" class="btn btn-primary" data-toggle="modal"
 			data-target="#edicionDatos">Editar Información</button>
-		<br>
-		<br>
+		<br> <br>
+
+
 
 	</div>
 
-	<!-- Portfolio Modal 2 -->
 
-	<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog"
-		aria-labelledby="staticBackdropLabel" aria-hidden="true">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="staticBackdropLabel">Aviso!!</h5>
-				</div>
-				<div class="modal-body1">Hay dos modulos que no estan
-					diseñados. Este es el otro :C</div>
-				<br>
-				<div class="modal-footer1">
-
-					<div class="btn-group" role="group" aria-label="Basic example">
-						<button type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
-						<button type="button" class="btn btn-secondary"
-							data-dismiss="modal">Cancelar</button>
-
-					</div>
-
-				</div>
-			</div>
-		</div>
-	</div>
+	<!-- Modal para la edicion de Datos -->
 
 	<div class="portfolio-modal modal fade" id="edicionDatos"
 		data-backdrop="static" tabindex="-1" role="dialog"
 		aria-labelledby="portfolioModal1Label" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
+
 				<div class="modal-header">
 					<h5 class="modal-title" id="exampleModalLabel">Edición de
 						Información</h5>
@@ -232,55 +222,64 @@
 				</div>
 				<div class="modal-body">
 
-					<div class="form-group row">
 
-						<label for="numTelefono" class="col-sm-4 col-form-label">Numero
-							Telefono</label>
-						<div class="col-sm-8">
-							<input type="number" class="form-control" id="numTelefono"
-								disabled>
-						</div>
-						<br>
-						<br> <label for="calle" class="col-sm-4 col-form-label">Calle</label>
-						<div class="col-sm-8">
-							<input type="number" class="form-control" id="calle" disabled>
-						</div>
-						<br>
-						<br> <label for="numExterior" class="col-sm-4 col-form-label">Numero
-							Ext</label>
-						<div class="col-sm-8">
-							<input type="text" class="form-control" id="numeroExterior"
-								disabled>
-						</div>
-						<br>
-						<br> <label for="colonia" class="col-sm-4 col-form-label">Colonia</label>
-						<div class="col-sm-8">
-							<input type="text" class="form-control" id="colonia" disabled>
-						</div>
-						<br>
-						<br> <label for="delegacion" class="col-sm-4 col-form-label">Delegacion</label>
-						<div class="col-sm-8">
-							<input type="text" class="form-control" id="delegacion" disabled>
-						</div>
-						<br>
-						<br> <label for="estado" class="col-sm-4 col-form-label">Estado</label>
-						<div class="col-sm-8">
-							<input type="number" class="form-control" id="estado" disabled>
-						</div>
-						<br>
-						<br> <label for="CP" class="col-sm-4 col-form-label">C.P</label>
-						<div class="col-sm-8">
-							<input type="number" class="form-control" id="CP" disabled>
-						</div>
+					<form method="get" action="/Sistema-Nomina/datosPersonales" onsubmit="return valforms(this)">
+						<div class="form-group row">
+					
+							<label for="numTelefono" class="col-sm-4 col-form-label">Numero
+								Telefono:</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" id="numTelefono"
+									name="numTelefono"  onChange="return valforms(this.form,this)" editcheck="minlen=10=&iexcl;Ingrese un numero de telefono valido;type=int" maxlength="10" value="${numTelefono}">
+									
+							</div>
+							<br> <br> <label for="calle"
+								class="col-sm-4 col-form-label">Calle</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" id="calle" name="calle" value="${calle}" onChange="return valforms(this.form,this)" editcheck="type=ALPHA=Ingrese una calle colonia;" maxlength="50">
+							</div>
+							<br> <br> <label for="numExterior"
+								class="col-sm-4 col-form-label">Numero Ext</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" id="numeroExterior"
+									name="numeroExterior" onChange="return valforms(this.form,this)" value="${numeroExterior}" editcheck="type=int=Ingresa un numero de exterior valido;" maxlength="4" >
+							</div>
+							<br> <br> <label for="colonia"
+								class="col-sm-4 col-form-label">Colonia</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" id="colonia"
+									name="colonia" onChange="return valforms(this.form,this)" value="${colonia}" editcheck="type=ALPHA=Ingrese una delegacion colonia;" maxlength="25">
+							</div>
+							<br> <br> <label for="delegacion"
+								class="col-sm-4 col-form-label">Delegacion</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" id="delegacion"
+									name="delegacion" onChange="return valforms(this.form,this)" value="${delegacion}" editcheck="type=ALPHA=Ingrese una delegacion valida;" maxlength="25">
+							</div>
+							<br> <br> <label for="estado"
+								class="col-sm-4 col-form-label">Estado</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" id="estado"
+									name="estado" onChange="return valforms(this.form,this)" value="${estado}" editcheck="type=ALPHA=Ingrese una estado valida;" maxlength="25">
+							</div>
+							<br> <br> <label for="CP"
+								class="col-sm-4 col-form-label">C.P</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" id="CP" name="CP" value="${CP}" onChange="return valforms(this.form,this)" editcheck="type=int=Ingrese una codigo postal valido;" maxlength="5">
+							</div>
 
-					</div>
+							<div class="modal-footer padd-footer">
+								<button type="button" class="btn btn-secondary"
+									data-dismiss="modal">Cancelar</button>
+								<button type="submit" class="btn btn-primary">Aceptar</button>
+							</div>
 
+
+						</div>
+					</form>
 				</div>
-				<div class="modal-footer padd-footer">
-					<button type="button" class="btn btn-secondary"
-						data-dismiss="modal">Cancelar</button>
-					<button type="button" class="btn btn-primary">Aceptar</button>
-				</div>
+
+
 			</div>
 		</div>
 	</div>
