@@ -49,6 +49,7 @@ public class edicionSistema extends HttpServlet {
 					puestos.add(da.getNombre_puesto());
 
 				}
+				
 				request.setAttribute("puestos", puestos);
 				Calendar fecha = new GregorianCalendar();
 				int año = fecha.get(Calendar.YEAR); 

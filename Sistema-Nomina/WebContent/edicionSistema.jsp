@@ -172,7 +172,7 @@
                    lo haga es totalmente innecesario, 
                    lo correcto es usar el evento onchange 
                 -->
-							<option value="">Seleccione una clase...</option>
+							<option value="" disabled="disabled">Seleccione una clase...</option>
 						</select> <select class="custom-select my-1 mr-sm-2 col-5 mb-5"
 							name="tipo_pago" id="tipo_pago">
 							<!-- Hay que terminar los options -->
@@ -182,35 +182,34 @@
                    lo haga es totalmente innecesario, 
                    lo correcto es usar el evento onchange 
                 -->
-							<option value="">Seleccione un tipo_pago...</option>
-						</select> <input id="clase" name="clase" type="hidden" value=" ">
-						<div class="form-row">
+							<option value="" disabled="disabled">Seleccione un tipo_pago...</option>
+						</select>
 
-							<div class="col-md-2 mb-3">
-								<label for="Fecha_ingreso">Fecha Ingreso</label> <input
-									type="hidden" class="form-control" id="fechaIngreso"
-									name="fechaIngreso" value="${fecha_ingreso}" required>
-								<input type="text" class="form-control" id="fechaIngresoVista"
-									name="fechaIngresoVista" value="${fecha_ingreso}" required
-									disabled>
-							</div>
-
-							<div class="col-md-3 mb-3">
-								<label for="correo">Correo</label> <input type="text"
-									class="form-control" id="correo" value="" required
-									name="correo" onChange="return valforms(this.form,this)"
-									editcheck="type=email=Ingrese un correo valido;" maxlength="30">
-							</div>
-							<div class="col-md-3 mb-3">
-								<label for="contrasena">Contraseña</label> <input type="text"
-									class="form-control" id="contrasena" value="" required
-									name="contrasena" onChange="return valforms(this.form,this)"
-									editcheck="type=alphanum=Ingrese un password valido;"
-									maxlength="20">
-							</div>
+						<div class="col-md-2 mb-3">
+							<label for="Fecha_ingreso">Fecha Ingreso</label> <input
+								type="hidden" class="form-control" id="fechaIngreso"
+								name="fechaIngreso" value="${fecha_ingreso}" required> <input
+								type="text" class="form-control" id="fechaIngresoVista"
+								name="fechaIngresoVista" value="${fecha_ingreso}" required
+								disabled>
 						</div>
+
+						<div class="col-md-3 mb-3">
+							<label for="correo">Correo</label> <input type="text"
+								class="form-control" id="correo" value="" required name="correo"
+								onChange="return valforms(this.form,this)"
+								editcheck="type=email=Ingrese un correo valido;" maxlength="30">
+						</div>
+						<div class="col-md-3 mb-3">
+							<label for="contrasena">Contraseña</label> <input type="text"
+								class="form-control" id="contrasena" value="" required
+								name="contrasena" onChange="return valforms(this.form,this)"
+								editcheck="type=alphanum=Ingrese un password valido;"
+								maxlength="20">
+						</div>
+
 						<!-- Se genera una lista depegable de forma dinamica -->
-						<label for="Puestos">Puestos</label> <select
+						<label for="Puestos">Puestos</label> <br> <select
 							class="custom-select my-1 mr-sm-2 col-5 mb-5" id="puesto"
 							name="puesto" required>
 							<%
@@ -223,18 +222,30 @@
 								out.print("<option value='" + puestos.get(x) + "'>" + puestos.get(x) + "</option>");
 							}
 							%>
-							</select>
-						<fieldset>
-							<legend>¿Tiene Credito?</legend>
-							<label> <input type="radio" id ="Si" name="Si" value="Si">
-								Si
-							</label> <label> <input type="radio" name="No" value="No">
-								No
-							</label>
-						</fieldset>
-					
-						
-						
+						</select> <br>
+						<!-- Añadido onchange para cargar los Tipo_Infonavits -->
+						<select name="infonavit" id="infonavit"
+							onchange="cargaTipo_Infonavit();" class="custom-select my-1 mr-sm-2 col-5 mb-5" name="clase">
+							<!-- Hay que terminar los options -->
+							<!-- 
+                   Eliminado de value la llamada a la función,
+                   si eso funciona lo desconocía, y aunque 
+                   lo haga es totalmente innecesario, 
+                   lo correcto es usar el evento onchange 
+                -->
+							<option value="" disabled="disabled">Seleccione si tiene
+								infonavit...</option>
+						</select> <select name="Tipo_Infonavit" id="Tipo_Infonavit" class="custom-select my-1 mr-sm-2 col-5 mb-5" name="clase">
+							<!-- Hay que terminar los options -->
+							<!-- 
+                   Eliminado de value la llamada a la función,
+                   si eso funciona lo desconocía, y aunque 
+                   lo haga es totalmente innecesario, 
+                   lo correcto es usar el evento onchange 
+                -->
+							<option value="" disabled="disabled">Seleccione un Tipo
+								de Infonavit...</option>
+						</select> <br> <br>
 						<button type="submit" class="btn btn-primary">Agregar
 							Usuario</button>
 
@@ -580,5 +591,6 @@
 	<!-- Custom scripts for this template -->
 	<script src="js/freelancer.min.js"></script>
 	<script src="js/clase.js"></script>
+	<script src="js/infonavit.js"></script>  
 </body>
 </html>
