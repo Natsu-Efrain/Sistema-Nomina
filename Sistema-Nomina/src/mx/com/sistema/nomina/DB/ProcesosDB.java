@@ -139,7 +139,7 @@ import java.sql.Connection;
 		
 		// Metodo para ingresar usuarios
 				public void insercionInformacionEmpleado(String nombre,String apellidoP,String apellidoM,String num_telefono, String calle, String num_exterior,
-						String colonia, String delegacion, String estado, String codigo_postal,String clase,String Tipo_Pago,String Fecha_Ingreso,String Correo,String contrasena,String Id_puesto) {
+						String colonia, String delegacion, String estado, String codigo_postal,String clase,String Tipo_Pago,String Fecha_Ingreso,String Correo,String contrasena,String Id_puesto,String creditoInf,String metodO,String parametroInf) {
 					connectDatabase();
 
 					try {
@@ -148,7 +148,8 @@ import java.sql.Connection;
 						
 
 						stm.execute("INSERT INTO Usuario VALUES (Default,'"+nombre+"','"+apellidoP+"','"+apellidoM+"',"+num_telefono+",'"+calle+"','"+num_exterior+"','"+colonia+"','"+delegacion+"','"+estado+"',"+codigo_postal+",'"+clase+"','"+Tipo_Pago+"', '"+Fecha_Ingreso+"', 'No', '"+Correo+"', '"+contrasena+"',"+Id_puesto+",'Si');");
-						
+                        String valor="SELECT Id_Empleado FROM Usuario WHERE nombre='"+nombre+"' and apellido_p='"+apellidoP+"' and apellido_m='"+apellidoM+"'";
+						stm.execute("SELECT crearDataUsuario (("+valor+"),'"+creditoInf+"','"+metodO+"',"+parametroInf+");");
 						System.out.println("Se registro correctamente");
 					} catch (Exception e) {
 						System.out.println(e);
@@ -181,5 +182,7 @@ import java.sql.Connection;
 					desconectar();
 					return listadoInformacionPuesto;
 				}
+				
+				
 
 }

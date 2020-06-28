@@ -58,6 +58,9 @@ public class AgregarEmpleado extends HttpServlet {
 		String contrasena = request.getParameter("contrasena");
 		String nombre_puesto = request.getParameter("puesto");
 		String Id_puesto="";
+		String creditoInf=request.getParameter("infonavit");
+		String metodO=request.getParameter("Tipo_Infonavit");
+		String parametroInf=request.getParameter("info");
 	
 		
         ProcesosDB pdb=new ProcesosDB();
@@ -70,7 +73,7 @@ public class AgregarEmpleado extends HttpServlet {
 	         Id_puesto=da.getId_puesto();
 		}
 		
-	    pdb.insercionInformacionEmpleado(nombre, apellidoP, apellidoM, num_telefono, calle, num_exterior, colonia, delegacion, estado, codigo_postal, clase, Tipo_Pago, Fecha_Ingreso, Correo, contrasena, Id_puesto);
+	    pdb.insercionInformacionEmpleado(nombre, apellidoP, apellidoM, num_telefono, calle, num_exterior, colonia, delegacion, estado, codigo_postal, clase, Tipo_Pago, Fecha_Ingreso, Correo, contrasena, Id_puesto,creditoInf,metodO,parametroInf);
 	    RequestDispatcher rd;
 	    rd = request.getRequestDispatcher("/edicionSistema");
 		rd.forward(request, response);

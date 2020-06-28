@@ -31,7 +31,7 @@ function cargaTipo_Pago() {
     var claseSeleccionada = clases.value
     
     // Se limpian los tipo_pagos
-    tipo_pagos.innerHTML = '<option value="" disabled="disabled">Seleccione un Tipo de pago...</option>'
+    tipo_pagos.innerHTML = '<option value="" required="required" disabled="disabled">Seleccione un Tipo de pago...</option>'
     
     if(claseSeleccionada !== ''){
       // Se seleccionan los tipo_pagos y se ordenan

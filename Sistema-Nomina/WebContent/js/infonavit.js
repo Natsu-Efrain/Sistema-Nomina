@@ -31,7 +31,7 @@ function cargaTipo_Infonavit() {
     var infonavitSeleccionada = infonavits.value
     
     // Se limpian los Tipo_Infonavits
-    Tipo_Infonavits.innerHTML = '<option value="" disabled="disabled">Seleccione un Tipo_Infonavit...</option>'
+    Tipo_Infonavits.innerHTML = '<option value="" required="required" disabled="disabled">Seleccione un Tipo_Infonavit...</option>'
     
     if(infonavitSeleccionada !== ''){
       // Se seleccionan los Tipo_Infonavits y se ordenan
