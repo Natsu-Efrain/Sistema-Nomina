@@ -216,7 +216,7 @@ import java.sql.Connection;
 
 						Statement stm = connection.createStatement();
 						ResultSet rs = stm.executeQuery(
-								"select * from Area where nombre_puesto='"
+								"select * from Area where nombre_area='"
 										+ nombre_area + "';");
 
 						while (rs.next()) {
@@ -241,7 +241,7 @@ import java.sql.Connection;
 
 						Statement stm = connection.createStatement();
 						
-
+                      
 						stm.execute("INSERT INTO Puesto VALUES (Default,"+Id_area+",'"+nombre_puesto+"',"+salario+","+Horas+");");
                      
 						System.out.println("Se registro correctamente");

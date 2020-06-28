@@ -43,12 +43,12 @@ public class AgregarPuesto extends HttpServlet {
 				
 		        List<Datos_Agregar> listaId_puesto;
 				
-		        listaId_puesto=pdb.consultaId_Puesto(nombre_puesto);
+		        listaId_puesto=pdb.consultaId_Area(nombre_area);
 			
 		        for (Datos_Agregar da : listaId_puesto) {
 		        	Id_area=da.getId_area();
 				}
-				System.out.println(nombre_area+nombre_puesto+salario+Horas);
+				System.out.println(Id_area+nombre_puesto+salario+Horas);
 			    pdb.insercionInformacionPuesto(Id_area,nombre_puesto,salario,Horas);
 			    RequestDispatcher rd;
 			    rd = request.getRequestDispatcher("/edicionSistema");
