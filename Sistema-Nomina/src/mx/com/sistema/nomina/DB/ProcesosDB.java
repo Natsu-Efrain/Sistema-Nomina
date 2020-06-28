@@ -273,5 +273,51 @@ import java.sql.Connection;
 					}
 					desconectar();
 				}	
+				
+				//Metodo para consultar la informacion empresarial del usuario
+				public List<Usuario> consultaDatosEmpresariales(String id_empleado) {
+					connectDatabase();
+					List<Usuario> listadoDatosEmpresariales = new ArrayList<Usuario>();
+					try {
+
+						Statement stm = connection.createStatement();
+						ResultSet rs = stm.executeQuery(
+								"select * from Usuario INNER JOIN Puesto ON Usuario.ID_puesto = Puesto.ID_puesto INNER JOIN Area ON Puesto.Id_Area = Area.Id_Area where Id_empleado="
+										+ id_empleado + ";");
+
+						while (rs.next()) {
+							Usuario usr = new Usuario();
+							usr.setClase(rs.getString("clase"));
+							usr.setTipo_pago(rs.getString("tipo_pago"));
+							usr.setPuesto(rs.getString("nombre_puesto"));
+							usr.setArea(rs.getString("nombre_area"));
+
+							listadoDatosEmpresariales.add(usr);
+						}
+					} catch (Exception e) {
+						e.printStackTrace();
+
+					}
+					desconectar();
+					return listadoDatosEmpresariales;
+				}
+				
+				
+				public void modificacionDetallesEmpresariales(String id_empleado,String clase,String tipo_pago,String puesto) {
+					connectDatabase();
+
+					try {
+
+						Statement stm = connection.createStatement();
+						
+                        String Id_puesto="Select Id_puesto from Puesto where nombre_puesto='"+puesto+"'";
+						stm.execute("update usuario set clase='"+clase+"',tipo_pago='"+tipo_pago+"', id_puesto=("+Id_puesto+") where id_empleado=" + id_empleado + ";");
+						System.out.println("Se actualizo correctamente");
+					} catch (Exception e) {
+					    MensajeError="ERROR: El nombre del area ya se ha registrado en la Base de datos, ingrese otro nombre!!";
+						System.out.println(e);
+					}
+					desconectar();
+				}	
 
 }

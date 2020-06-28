@@ -63,11 +63,12 @@ public class edicionSistema extends HttpServlet {
 				request.setAttribute("areas", areas);
 				request.setAttribute("puestos", puestos);
 				request.setAttribute("areas_existentes", areas);
+				request.setAttribute("puestos_editar", puestos);
 				Calendar fecha = new GregorianCalendar();
 				int año = fecha.get(Calendar.YEAR); 
 				int mes=fecha.get(Calendar.MONTH)+1;
 				int dia=fecha.get(Calendar.DAY_OF_MONTH);
-				System.out.println(año+"-"+mes+"-"+dia);
+				System.out.println(año+"-"+mes+"-"+dia); 
 				
 				
 				

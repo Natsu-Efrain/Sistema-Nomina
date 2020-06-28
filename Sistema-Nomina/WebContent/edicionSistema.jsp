@@ -53,16 +53,20 @@
 		<div class="col-3">
 			<div class="nav flex-column nav-pills" id="v-pills-tab"
 				role="tablist" aria-orientation="vertical">
-				
-	 <a class="nav-link active" id="v-pills-messages-tab" data-toggle="pill" href="#editarUsuario" role="tab" 
-	 aria-controls="editarUsuario" aria-selected="false">Editar Usuario</a>
-      <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" 
-      aria-controls="v-pills-profile" aria-selected="false">Agregar Puesto</a>
-      <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" 
-      aria-controls="v-pills-messages" aria-selected="false">Crear Area</a>
-       <a class="nav-link" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" 
-       aria-controls="v-pills-home" aria-selected="true">Agregar Empleado</a>
-				
+
+				<a class="nav-link active" id="v-pills-messages-tab"
+					data-toggle="pill" href="#editarUsuario" role="tab"
+					aria-controls="editarUsuario" aria-selected="false">Editar
+					Usuario</a> <a class="nav-link" id="v-pills-profile-tab"
+					data-toggle="pill" href="#v-pills-profile" role="tab"
+					aria-controls="v-pills-profile" aria-selected="false">Agregar
+					Puesto</a> <a class="nav-link" id="v-pills-messages-tab"
+					data-toggle="pill" href="#v-pills-messages" role="tab"
+					aria-controls="v-pills-messages" aria-selected="false">Crear
+					Area</a> <a class="nav-link" id="v-pills-home-tab" data-toggle="pill"
+					href="#v-pills-home" role="tab" aria-controls="v-pills-home"
+					aria-selected="true">Agregar Empleado</a>
+
 			</div>
 		</div>
 
@@ -70,25 +74,29 @@
 			<div class="tab-content" id="v-pills-tabContent">
 
 				<!-- Codigo de Primer Pill - 'Editar' -->
-				
-				<div class="tab-pane fade show active" id="editarUsuario" role="tabpanel"
-					aria-labelledby="editarUsuario">
+
+				<div class="tab-pane fade show active" id="editarUsuario"
+					role="tabpanel" aria-labelledby="editarUsuario">
 
 					<h2>Edicion de Datos Empresariales</h2>
+					<form method="get" action="/Sistema-Nomina/BuscarEmpleado"
+						onsubmit="return valforms(this)">
+						<div class="form-group row">
 
-					<div class="form-group row">
+							<label for="id_empleado" class="col-sm-2 col-form-label">Id
+								Empleado:</label>
+							<div class="col-sm-2">
+								<input type="text" class="form-control" id="id_empleado"
+									name="id_empleado" onChange="return valforms(this.form,this)"
+									editcheck="type=int=Ingrese un ID de empleado valido;"
+									maxlength="25" required="required">
+							</div>
 
-						<label for="idEmpleado" class="col-sm-2 col-form-label">Id
-							Empleado:</label>
-						<div class="col-sm-2">
-							<input type="number" class="form-control" id="idEmpleado">
+							<button type="submit" class="btn btn-primary" data-toggle="modal"
+								data-target="#staticBackdrop">Buscar</button>
 						</div>
 
-						<button type="button" class="btn btn-primary" data-toggle="modal"
-							data-target="#staticBackdrop">Buscar</button>
-					</div>
-
-
+					</form>
 					<div class="container" style="padding-top: 30px;">
 
 						<div class="row">
@@ -100,25 +108,27 @@
 										<div class="form-group row">
 											<label for="claseE" class="col-sm-4 col-form-label">Clase</label>
 											<div class="col-sm-8">
-												<input type="number" class="form-control" id="claseE"
-													disabled>
+												<input type="text" class="form-control" id="claseE" disabled
+													value="${claseE}">
 											</div>
 
 											<label for="tipoPago" class="col-sm-4 col-form-label">Tipo
 												Pago</label>
 											<div class="col-sm-8">
 												<input type="text" class="form-control" id="tipoPago"
-													disabled>
+													disabled value="${tipoPago}">
 											</div>
 
 											<label for="puesto" class="col-sm-4 col-form-label">Puesto</label>
 											<div class="col-sm-8">
-												<input type="text" class="form-control" id="puesto" disabled>
+												<input type="text" class="form-control" id="puesto" disabled
+													value="${puesto}">
 											</div>
 
 											<label for="area" class="col-sm-4 col-form-label">Area</label>
 											<div class="col-sm-8">
-												<input type="text" class="form-control" id="area" disabled>
+												<input type="text" class="form-control" id="area" disabled
+													value="${area}">
 											</div>
 
 										</div>
@@ -134,40 +144,72 @@
 									<h4 class="card-header">Nuevos Datos</h4>
 									<div class="card-body">
 
-										<form name="nuevosDatos" onsubmit="return valforms(this)">
+										<form name="nuevosDatos" onsubmit="return valforms(this)" action="/Sistema-Nomina/EditarEmpresariales" method="get">
 
-											<div class="form-row">
-												<select class="custom-select my-1 mr-sm-2 col-5 mb-5"
-													id="claseEmpleado">
-													<option selected disabled>Clase Empleado</option>
-													<option value="1">Confianza</option>
-													<option value="2">Base</option>
-												</select> <select class="custom-select my-1 mr-sm-2 col-5 mb-5"
-													id="tipoPago">
-													<option selected disabled>Tipo Pago</option>
-													<option value="1">Semanal</option>
-													<option value="2">Quincenal</option>
-												</select>
 
-												<!--  Dependiendo del area que se eligio se deberan cargar los puestos que existen en dicha area-->
+											<!-- Añadido onchange para cargar los tipo_pagos -->
+											<label for="claseE">Clase de Empleado</label> <br>
+											<select class="custom-select my-1 mr-sm-2 col-5 mb-5"
+												name="clase" id="clase" onchange="cargaTipo_Pago();"
+												required="required">
+												<!-- Hay que terminar los options -->
+												<!-- 
+                   Eliminado de value la llamada a la función,
+                   si eso funciona lo desconocía, y aunque 
+                   lo haga es totalmente innecesario, 
+                   lo correcto es usar el evento onchange 
+                -->
+												<option value="" disabled="disabled">Seleccione una
+													clase...</option>
+											</select><br> <label for="Tipo_de_pagos">Tipo de pagos</label><br>
+											<select class="custom-select my-1 mr-sm-2 col-5 mb-5"
+												name="tipo_pago" id="tipo_pago" required="required">
+												<!-- Hay que terminar los options -->
+												<!-- 
+                   Eliminado de value la llamada a la función,
+                   si eso funciona lo desconocía, y aunque 
+                   lo haga es totalmente innecesario, 
+                   lo correcto es usar el evento onchange 
+                -->
+												<option value="" disabled="disabled">Seleccione un
+													tipo_pago...</option>
+											</select> <br>
+											<!-- Se genera una lista depegable de forma dinamica -->
+											<label for="Puestos">Puestos</label> <br>
+											<select class="custom-select my-1 mr-sm-2 col-5 mb-5"
+												id="puesto" name="puesto" required>
+												<%
+													ArrayList<String> puestos_Editar = (ArrayList<String>) request.getAttribute("puestos_editar");
+												int e = 0;
 
-											</div>
+												for (int x = 0; x < puestos_Editar.size(); x++) {
+													e = e + 1;
 
+													out.print("<option value='" + puestos_Editar.get(x) + "'>" + puestos_Editar.get(x) + "</option>");
+												}
+												%>
+											</select> <br>
+
+											<!--  Dependiendo del area que se eligio se deberan cargar los puestos que existen en dicha area-->
+
+											<br>
+											<button type="submit" class="btn btn-primary"
+												data-toggle="modal" >Confirmar
+												Edición</button>
 										</form>
 									</div>
 								</div>
 							</div>
 						</div>
 
-						<button type="button" class="btn btn-primary" data-toggle="modal"
-							data-target="#edicionDatos">Confirmar Edición</button>
+
 						<br> <br>
 
 					</div>
 
 
 				</div>
-				
+
 				<!-- Codigo de Segundo Pill - Creacion de Puestos-->
 
 				<div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
@@ -254,10 +296,10 @@
 							<div class="col-md-3 mb-3">
 								<label for="nuevaArea" class="col-form-label">Nombre de
 									nueva Area:</label> <input type="text" class="form-control"
-									id="nombre_area" name="nombre_area"
-									required onchange="return valforms(this.form,this)"
+									id="nombre_area" name="nombre_area" required
+									onchange="return valforms(this.form,this)"
 									editcheck="type=alpha=Ingrese un nombre de area valido;"
-									maxlength="30" >
+									maxlength="30">
 							</div>
 						</div>
 
@@ -272,17 +314,16 @@
 									name="vales_despensa" required="required">
 							</div>
 						</div>
-						<button type="submit" class="btn btn-primary" data-toggle="modal"
-							">Crear</button>
+						<button type="submit" class="btn btn-primary" data-toggle="modal"">Crear</button>
 					</form>
 
 
 				</div>
 
 				<!-- Creacion del cuarto Pill - Agregar Nuevos Empleados -->
-				
-				<div class="tab-pane fade" id="v-pills-home"
-					role="tabpanel" aria-labelledby="v-pills-home-tab">
+
+				<div class="tab-pane fade" id="v-pills-home" role="tabpanel"
+					aria-labelledby="v-pills-home-tab">
 
 					<form method="get" action="/Sistema-Nomina/AgregarEmpleado"
 						onsubmit="return valforms(this)">

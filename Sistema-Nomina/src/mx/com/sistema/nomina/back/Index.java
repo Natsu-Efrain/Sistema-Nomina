@@ -42,8 +42,9 @@ public class Index extends HttpServlet {
 		List<Usuario> listaUsuario;
 		//Obtencion de los datos del usuario en la BD
 		listaUsuario=pdb.consultaUsuario(Login.correo,Login.contrasena);
+		String area="";
 		for (Usuario usr : listaUsuario) {
-			
+			area=usr.getArea();
 			request.setAttribute("IdEmpleado", usr.getId_empleado());
 			request.setAttribute("nombre", usr.getNombre());
 			request.setAttribute("apellidoP", usr.getApellidop());
@@ -61,7 +62,7 @@ public class Index extends HttpServlet {
 			request.setAttribute("puesto", usr.getPuesto());
 			request.setAttribute("area", usr.getArea());
 		}
-		if(Integer.parseInt(Login.id_puesto)>=101&&Integer.parseInt(Login.id_puesto)<=200)
+		if(area.equals("Recursos Humanos"))
 		{
 		rd = request.getRequestDispatcher("/datosPersonales.jsp");
 		rd.forward(request, response);
