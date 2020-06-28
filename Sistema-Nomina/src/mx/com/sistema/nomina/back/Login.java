@@ -65,7 +65,7 @@ public class Login extends HttpServlet {
 		for(Usuario usr:listaUsuario) {
 				idEmpleado=usr.getId_empleado();
 				id_puesto=usr.getId_puesto();
-                if(Integer.parseInt(usr.getId_puesto())>=101&&Integer.parseInt(usr.getId_puesto())<=200)
+                if(usr.getArea().equals("Recursos Humanos"))
                 {
 				rd=request.getRequestDispatcher("/menu.jsp");
 				rd.forward(request, response);

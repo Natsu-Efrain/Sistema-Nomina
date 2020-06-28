@@ -36,9 +36,9 @@
                  
                      <a href="menu.jsp">Inicio</a>
                 
-                     <a href="Index">Datos personales</a>
+                     <a href="/Sistema-Nomina/Index">Datos personales</a>
                   
-                     <a href="edicionSistema.jsp">Sistema</a>
+                     <a href="/Sistema-Nomina/edicionSistema">Sistema</a>
                      
                      <a href="nomina.html">Calculo Nomina</a>
                      <a href="finiquito.html">Finiquitos y Liquidaciones</a>      
