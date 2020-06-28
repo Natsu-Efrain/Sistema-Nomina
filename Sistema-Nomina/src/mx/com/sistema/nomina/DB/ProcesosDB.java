@@ -254,5 +254,24 @@ import java.sql.Connection;
 					}
 					desconectar();
 				}	
+				
+				// Metodo para agregar area
+				public void insercionInformacionArea(String nombre_area,String vales_despensa) {
+					connectDatabase();
+
+					try {
+
+						Statement stm = connection.createStatement();
+						
+                      
+						stm.execute("INSERT INTO Area VALUES (Default,'"+nombre_area+"',"+vales_despensa+");");
+                     
+						System.out.println("Se registro correctamente");
+					} catch (Exception e) {
+					    MensajeError="ERROR: El nombre del area ya se ha registrado en la Base de datos, ingrese otro nombre!!";
+						System.out.println(e);
+					}
+					desconectar();
+				}	
 
 }

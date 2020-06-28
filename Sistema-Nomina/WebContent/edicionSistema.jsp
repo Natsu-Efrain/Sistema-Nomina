@@ -29,11 +29,7 @@
 <script type="text/javascript" src="js/editcheck.js"></script>
 </head>
 <body id="page-top">
-<%
-							String error =(String)request.getAttribute("error");
-							if(error!=null)
-								
-							%>
+
 	<header>
 		<nav>
 			<section class="contenedor nav">
@@ -304,30 +300,27 @@
 									type="text" class="form-control" id="nombrePuesto" value=""
 									required name="nombrePuesto"
 									onChange="return valforms(this.form,this)"
-									editcheck="type=alpha=Ingrese un nombre de puesto;">
+									editcheck="type=alpha=Ingrese un nombre de puesto;"
+									maxlength="30">
 							</div>
 							<div class="col-md-2 mb-3">
 								<label for="Salario">Salario del Puesto</label> <input
 									type="text" class="form-control" id="Salario" value="" required
 									name="Salario" onChange="return valforms(this.form,this)"
-									editcheck="type=NUM=Ingrese un parametro salario valido;">
+									editcheck="type=NUM=Ingrese un parametro salario valido;"
+									maxlength="8">
 							</div>
-				</div>
-							<label for="Salario">Horas</label> 
-							<br>
-							<select class="custom-select my-1 mr-sm-2 col-5 mb-5" id="Horas" name="Horas">
-								<option selected disabled>Seleccion el numero de horas</option>
-								<option value="4" >4 Horas diarias</option>
-								<option value="5" >5 Horas diarias</option>
-								<option value="6" >6 Horas diarias</option>
-								<option value="7" >7 Horas diarias</option>
-								<option value="8" >8 Horas diarias</option>
-							</select>
-					
-						
-
-
-<br>
+						</div>
+						<label for="Salario">Horas</label> <br> <select
+							class="custom-select my-1 mr-sm-2 col-5 mb-5" id="Horas"
+							name="Horas">
+							<option selected disabled>Seleccion el numero de horas</option>
+							<option value="4">4 Horas diarias</option>
+							<option value="5">5 Horas diarias</option>
+							<option value="6">6 Horas diarias</option>
+							<option value="7">7 Horas diarias</option>
+							<option value="8">8 Horas diarias</option>
+						</select> <br>
 						<button type="submit" class="btn btn-primary" data-toggle="modal"
 							data-target="#creacionPuesto">Agregar nuevo puesto</button>
 					</form>
@@ -339,23 +332,33 @@
 				<div class="tab-pane fade" id="v-pills-messages" role="tabpanel"
 					aria-labelledby="v-pills-messages-tab">
 
-					<!--  En este comboBox se deberan cargar las area que actualmente existen desde la Base de Datos  -->
-					<select class="custom-select my-1 mr-sm-2 col-2 mb-3" id="area">
-						<option selected disabled>Areas Existentes</option>
-						<option value="1" disabled>Recursos Humanos</option>
-						<option value="2" disabled>Tecnologia</option>
-						<option value="3" disabled>Finanzas</option>
-						<option value="4" disabled>Comercial</option>
+					<!-- Se genera una lista depegable de forma dinamica -->
+					<label for="Areas_Existentes">Areas Existentes</label> <br> <select
+						class="custom-select my-1 mr-sm-2 col-5 mb-5" id="nombre_area"
+						name="nombre_area" required>
+						<%
+							ArrayList<String> areas_existentes = (ArrayList<String>) request.getAttribute("areas_existentes");
+						int ea = 0;
+
+						for (int x = 0; x < areas_existentes.size(); x++) {
+							ea = ea + 1;
+
+							out.print("<option disabled='disabled' value='" + areas_existentes.get(x) + "'>" + areas_existentes.get(x)
+							+ "</option>");
+						}
+						%>
 					</select>
-
-					<form>
-
+					<form method="get" action="/Sistema-Nomina/AgregarArea"
+						onsubmit="return valforms(this)">
 						<div class="form-group">
 
 							<div class="col-md-3 mb-3">
 								<label for="nuevaArea" class="col-form-label">Nombre de
 									nueva Area:</label> <input type="text" class="form-control"
-									id="nuevaArea">
+									id="nombre_area" name="nombre_area"
+									required onchange="return valforms(this.form,this)"
+									editcheck="type=alpha=Ingrese un nombre de area valido;"
+									maxlength="30" >
 							</div>
 						</div>
 
@@ -363,15 +366,16 @@
 
 							<div class="col-md-4 mb-3">
 								<label for="valesDespensa" class="col-form-label">Vales
-									de despensa correspondiente ($):</label> <input type="number"
-									class="form-control" id="valesDespensa">
+									de despensa correspondiente ($):</label> <input type="text"
+									class="form-control" id="valesDespensa"
+									onChange="return valforms(this.form,this)"
+									editcheck="type=num=Ingrese un valor valido;" maxlength="8"
+									name="vales_despensa" required="required">
 							</div>
 						</div>
-
+						<button type="submit" class="btn btn-primary" data-toggle="modal"
+							">Crear</button>
 					</form>
-
-					<button type="button" class="btn btn-primary" data-toggle="modal"
-						data-target="#creacionArea">Crear</button>
 
 
 				</div>
@@ -488,5 +492,123 @@
 	<!-- Portfolio Modal 1 -->
 
 
+
+
+
+
+	<!-- Modal - Creacion de puesto -->
+
+	<div class="modal fade" id="creacionPuesto" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Confirmacion
+						Puesto</h5>
+					<hr>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					Se va a crear un nuevo puesto <br> ¿Quiere continuar?
+				</div>
+				<div class="modal-footer"
+					style="padding-top: 10px; padding-bottom: 15px;">
+					<button type="button" class="btn btn-secondary"
+						data-dismiss="modal">Cancelar</button>
+					<button type="button" class="btn btn-primary">Aceptar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal - Creacion de Areas -->
+
+	<div class="portfolio-modal modal fade" id="creacionArea"
+		data-backdrop="static" tabindex="-1" role="dialog"
+		aria-labelledby="portfolioModal1Label" aria-hidden="true">
+
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Confirmacion
+						Area</h5>
+					<hr>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					Se va a crear una nueva Area<br> ¿Quiere continuar?
+				</div>
+				<div class="modal-footer"
+					style="padding-top: 10px; padding-bottom: 15px;">
+					<button type="button" class="btn btn-secondary"
+						data-dismiss="modal">Cancelar</button>
+					<button type="button" class="btn btn-primary">Aceptar</button>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
+	<!-- Modal - Edicion de Datos -->
+
+	<div class="portfolio-modal modal fade" id="edicionDatos"
+		data-backdrop="static" tabindex="-1" role="dialog"
+		aria-labelledby="edicionDatos" aria-hidden="true">
+
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Confirmacioón</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					Se van a modificar los datos<br> ¿Quiere continuar?
+				</div>
+				<div class="modal-footer"
+					style="padding-top: 10px; padding-bottom: 15px;">
+					<button type="button" class="btn btn-secondary"
+						data-dismiss="modal">Cancelar</button>
+					<button type="button" class="btn btn-primary">Aceptar</button>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
+
+	<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+	<div class="scroll-to-top d-lg-none position-fixed ">
+		<a class="js-scroll-trigger d-block text-center text-white rounded"
+			href="#page-top"> <i class="fa fa-chevron-up"></i>
+		</a>
+	</div>
+
+
+	<!-- Bootstrap core JavaScript -->
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+	<!-- Plugin JavaScript -->
+	<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+	<!-- Contact Form JavaScript -->
+	<script src="js/jqBootstrapValidation.js"></script>
+	<script src="js/contact_me.js"></script>
+
+	<!-- Custom scripts for this template -->
+	<script src="js/freelancer.min.js"></script>
+	<script src="js/clase.js"></script>
+	<script src="js/infonavit.js"></script>
 </body>
 </html>
