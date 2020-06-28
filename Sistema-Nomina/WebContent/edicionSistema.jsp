@@ -25,6 +25,7 @@
 <!-- Theme CSS -->
 <link href="css/freelancer.css" rel="stylesheet">
 <link href="css/estilos.css" rel="stylesheet">
+<script type="text/javascript" src="js/editcheck.js"></script>
 </head>
 <body id="page-top">
 
@@ -73,95 +74,145 @@
 				<div class="tab-pane fade show active" id="v-pills-home"
 					role="tabpanel" aria-labelledby="v-pills-home-tab">
 
-					<form method="get" action="/Sistema-Nomina/AgregarEmpleado" onsubmit="return valforms(this)">
+					<form method="get" action="/Sistema-Nomina/AgregarEmpleado"
+						onsubmit="return valforms(this)">
 						<h2>Datos Personales</h2>
 
 						<div class="form-row">
 							<div class="col-md-3 mb-3">
 								<label for="Nombre">Nombre</label> <input type="text"
-									class="form-control" id="Nombre" name="Nombre" onChange="return valforms(this.form,this)" editcheck="type=ALPHA=Ingrese un nombre valido;" maxlength="25" value="" required>
+									class="form-control" id="Nombre" name="Nombre"
+									onChange="return valforms(this.form,this)"
+									editcheck="type=ALPHA=Ingrese un nombre valido;" maxlength="25"
+									value="" required>
 							</div>
 							<div class="col-md-2 mb-3">
 								<label for="ApellidoP">Apellido Paterno</label> <input
 									type="text" class="form-control" id="ApellidoP" value=""
-									required name="ApellidoP" onChange="return valforms(this.form,this)" editcheck="type=ALPHA=Ingrese un apellido paterno valido;" maxlength="25">
+									required name="ApellidoP"
+									onChange="return valforms(this.form,this)"
+									editcheck="type=ALPHA=Ingrese un apellido paterno valido;"
+									maxlength="25">
 							</div>
 							<div class="col-md-2 mb-3">
 								<label for="ApellidoM">Apellido Materno</label> <input
 									type="text" class="form-control" id="ApellidoM" value=""
-									required name="ApellidoM" onChange="return valforms(this.form,this)" editcheck="type=ALPHA=Ingrese un apellido materno valido;" maxlength="25">
+									required name="ApellidoM"
+									onChange="return valforms(this.form,this)"
+									editcheck="type=ALPHA=Ingrese un apellido materno valido;"
+									maxlength="25">
 							</div>
 							<div class="col-md-2 mb-3">
 								<label for="Numero Telefono">Numero Telefono</label> <input
 									type="text" class="form-control" id="numeroTelefono" value=""
-									required name="numeroTelefono" onChange="return valforms(this.form,this)" editcheck="type=INT=Ingrese un numero valido;" maxlength="10" >
+									required name="numeroTelefono"
+									onChange="return valforms(this.form,this)"
+									editcheck="type=INT=Ingrese un numero valido;" maxlength="10">
 							</div>
 						</div>
 
 						<div class="form-row">
 							<div class="col-md-5 mb-3">
 								<label for="calle">Calle</label> <input type="text"
-									class="form-control" id="calle" value="" required name="calle" onChange="return valforms(this.form,this)" editcheck="type=alpha=Ingrese una calle valida;" maxlength="50">
+									class="form-control" id="calle" value="" required name="calle"
+									onChange="return valforms(this.form,this)"
+									editcheck="type=alpha=Ingrese una calle valida;" maxlength="50">
 							</div>
 							<div class="col-md-2 mb-3">
 								<label for="numExt">Numero Exterior</label> <input type="text"
-									class="form-control" id="numExt" value="" required name="numeroExterior" onChange="return valforms(this.form,this)" editcheck="type=INT=Ingrese un numero exterior valido;" maxlength="4">
+									class="form-control" id="numExt" value="" required
+									name="numeroExterior"
+									onChange="return valforms(this.form,this)"
+									editcheck="type=INT=Ingrese un numero exterior valido;"
+									maxlength="4">
 							</div>
 							<div class="col-md-2 mb-3">
 								<label for="colonia">Colonia</label> <input type="text"
-									class="form-control" id="colonia" value="" required name="colonia" onChange="return valforms(this.form,this)" editcheck="type=alpha=Ingrese una colonia valida;" maxlength="25">
+									class="form-control" id="colonia" value="" required
+									name="colonia" onChange="return valforms(this.form,this)"
+									editcheck="type=alpha=Ingrese una colonia valida;"
+									maxlength="25">
 							</div>
 						</div>
 
 						<div class="form-row">
 							<div class="col-md-2 mb-3">
 								<label for="calle">Delegacion</label> <input type="text"
-									class="form-control" id="delegacion" value="" required name="delegacion" onChange="return valforms(this.form,this)" editcheck="type=alpha=Ingrese una delegacion valida;" maxlength="25">
+									class="form-control" id="delegacion" value="" required
+									name="delegacion" onChange="return valforms(this.form,this)"
+									editcheck="type=alpha=Ingrese una delegacion valida;"
+									maxlength="25">
 							</div>
 							<div class="col-md-2 mb-3">
 								<label for="numExt">Estado</label> <input type="text"
-									class="form-control" id="estado" value="" required name="estado" onChange="return valforms(this.form,this)" editcheck="type=alpha=Ingrese un estado valido;" maxlength="25">
+									class="form-control" id="estado" value="" required
+									name="estado" onChange="return valforms(this.form,this)"
+									editcheck="type=alpha=Ingrese un estado valido;" maxlength="25">
 							</div>
 							<div class="col-md-1 mb-3">
-								<label for="colonia">C.P.</label> <input type="number"
-									class="form-control" id="CP" value="" required name="CP" onChange="return valforms(this.form,this)" editcheck="type=INT=Ingrese un codigo postal valido;" maxlength="5">
+								<label for="colonia">C.P.</label> <input type="text"
+									class="form-control" id="CP" value="" required name="CP"
+									onChange="return valforms(this.form,this)"
+									editcheck="type=INT=Ingrese un codigo postal valido;"
+									maxlength="5">
 							</div>
 						</div>
 
-				
-					<br>
-					<h2>Datos Empresariales</h2>
 
-					
-						<select class="custom-select my-1 mr-sm-2 col-2 mb-3"
-							id="claseEmpleado" name="claseEmpleado">
-							<option selected disabled>Clase Empleado</option>
-							<option value="1">Confianza</option>
-							<option value="2">Base</option>
-						</select> <select class="custom-select my-1 mr-sm-2 col-2 mb-3"
-							id="tipoPago" name=tipoPago>
-							<option selected disabled>Tipo Pago</option>
-							<option value="1">Semanal</option>
-							<option value="2">Quincenal</option>
-						</select>
+						<br>
+						<h2>Datos Empresariales</h2>
 
+						<!-- Añadido onchange para cargar los tipo_pagos -->
+						<select class="custom-select my-1 mr-sm-2 col-5 mb-5" name="clase"
+							id="clase" onchange="cargaTipo_Pago();">
+							<!-- Hay que terminar los options -->
+							<!-- 
+                   Eliminado de value la llamada a la función,
+                   si eso funciona lo desconocía, y aunque 
+                   lo haga es totalmente innecesario, 
+                   lo correcto es usar el evento onchange 
+                -->
+							<option value="">Seleccione una clase...</option>
+						</select> <select class="custom-select my-1 mr-sm-2 col-5 mb-5"
+							name="tipo_pago" id="tipo_pago">
+							<!-- Hay que terminar los options -->
+							<!-- 
+                   Eliminado de value la llamada a la función,
+                   si eso funciona lo desconocía, y aunque 
+                   lo haga es totalmente innecesario, 
+                   lo correcto es usar el evento onchange 
+                -->
+							<option value="">Seleccione un tipo_pago...</option>
+						</select> <input id="clase" name="clase" type="hidden" value=" ">
 						<div class="form-row">
 
 							<div class="col-md-2 mb-3">
-								<label for="calle">Fecha Ingreso</label> <input type="text"
-									class="form-control" id="fechaIngreso" value="sysdate" required
+								<label for="Fecha_ingreso">Fecha Ingreso</label> <input
+									type="hidden" class="form-control" id="fechaIngreso"
+									name="fechaIngreso" value="${fecha_ingreso}" required>
+								<input type="text" class="form-control" id="fechaIngresoVista"
+									name="fechaIngresoVista" value="${fecha_ingreso}" required
 									disabled>
 							</div>
 
 							<div class="col-md-3 mb-3">
 								<label for="correo">Correo</label> <input type="text"
-									class="form-control" id="correo" value="" required name="correo" onChange="return valforms(this.form,this)" editcheck="type=email=Ingrese un correo valido;" maxlength="30">
+									class="form-control" id="correo" value="" required
+									name="correo" onChange="return valforms(this.form,this)"
+									editcheck="type=email=Ingrese un correo valido;" maxlength="30">
+							</div>
+							<div class="col-md-3 mb-3">
+								<label for="contrasena">Contraseña</label> <input type="text"
+									class="form-control" id="contrasena" value="" required
+									name="contrasena" onChange="return valforms(this.form,this)"
+									editcheck="type=alphanum=Ingrese un password valido;"
+									maxlength="20">
 							</div>
 						</div>
-<!-- Se genera una lista depegable de forma dinamica -->
-						<select class="custom-select my-1 mr-sm-2 col-5 mb-5" id="puesto"
-							name="puesto">
-							<option selected disabled>Puestos</option>
+						<!-- Se genera una lista depegable de forma dinamica -->
+						<label for="Puestos">Puestos</label> <select
+							class="custom-select my-1 mr-sm-2 col-5 mb-5" id="puesto"
+							name="puesto" required>
 							<%
 								ArrayList<String> puestos = (ArrayList<String>) request.getAttribute("puestos");
 							int i = 0;
@@ -169,11 +220,21 @@
 							for (int x = 0; x < puestos.size(); x++) {
 								i = i + 1;
 
-								out.print("<option value='" + i + "'>" + puestos.get(x) + "</option>");
+								out.print("<option value='" + puestos.get(x) + "'>" + puestos.get(x) + "</option>");
 							}
 							%>
-						</select>
-
+							</select>
+						<fieldset>
+							<legend>¿Tiene Credito?</legend>
+							<label> <input type="radio" id ="Si" name="Si" value="Si">
+								Si
+							</label> <label> <input type="radio" name="No" value="No">
+								No
+							</label>
+						</fieldset>
+					
+						
+						
 						<button type="submit" class="btn btn-primary">Agregar
 							Usuario</button>
 
@@ -518,6 +579,6 @@
 
 	<!-- Custom scripts for this template -->
 	<script src="js/freelancer.min.js"></script>
-
+	<script src="js/clase.js"></script>
 </body>
 </html>

@@ -2,6 +2,8 @@ package mx.com.sistema.nomina.back;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -48,6 +50,12 @@ public class edicionSistema extends HttpServlet {
 
 				}
 				request.setAttribute("puestos", puestos);
+				Calendar fecha = new GregorianCalendar();
+				int año = fecha.get(Calendar.YEAR); 
+				int mes=fecha.get(Calendar.MONTH)+1;
+				int dia=fecha.get(Calendar.DAY_OF_MONTH);
+				System.out.println(año+"-"+mes+"-"+dia);
+				request.setAttribute("fecha_ingreso",año+"-"+mes+"-"+dia);
 				rd = request.getRequestDispatcher("/edicionSistema.jsp");
 				rd.forward(request, response);
 				

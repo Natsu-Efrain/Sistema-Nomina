@@ -1,7 +1,8 @@
 package mx.com.sistema.nomina.DB;
 
 
-	import java.sql.Connection;
+	import java.awt.Cursor;
+import java.sql.Connection;
 	import java.sql.ResultSet;
 	import java.sql.Statement;
 	import java.util.ArrayList;
@@ -135,5 +136,50 @@ package mx.com.sistema.nomina.DB;
 			desconectar();
 			return listadoPuestos;
 		}
-			
+		
+		// Metodo para ingresar usuarios
+				public void insercionInformacionEmpleado(String nombre,String apellidoP,String apellidoM,String num_telefono, String calle, String num_exterior,
+						String colonia, String delegacion, String estado, String codigo_postal,String clase,String Tipo_Pago,String Fecha_Ingreso,String Correo,String contrasena,String Id_puesto) {
+					connectDatabase();
+
+					try {
+
+						Statement stm = connection.createStatement();
+						
+
+						stm.execute("INSERT INTO Usuario VALUES (Default,'"+nombre+"','"+apellidoP+"','"+apellidoM+"',"+num_telefono+",'"+calle+"','"+num_exterior+"','"+colonia+"','"+delegacion+"','"+estado+"',"+codigo_postal+",'"+clase+"','"+Tipo_Pago+"', '"+Fecha_Ingreso+"', 'No', '"+Correo+"', '"+contrasena+"',"+Id_puesto+",'Si');");
+						
+						System.out.println("Se registro correctamente");
+					} catch (Exception e) {
+						System.out.println(e);
+					}
+					desconectar();
+				}	
+				
+		  
+				
+				//Metodo para poder recuperar la informacion del jsp Recuperar Id_puesto
+				public List<Datos_Agregar> consultaId_Puesto(String nombre_puesto) {
+					connectDatabase();
+					List<Datos_Agregar> listadoInformacionPuesto = new ArrayList<Datos_Agregar>();
+					try {
+
+						Statement stm = connection.createStatement();
+						ResultSet rs = stm.executeQuery(
+								"select * from Puesto where nombre_puesto='"
+										+ nombre_puesto + "';");
+
+						while (rs.next()) {
+							Datos_Agregar usr = new Datos_Agregar();
+							usr.setId_puesto((rs.getString("id_puesto")));
+							listadoInformacionPuesto.add(usr);
+						}
+					} catch (Exception e) {
+						e.printStackTrace();
+
+					}
+					desconectar();
+					return listadoInformacionPuesto;
+				}
+
 }
