@@ -71,7 +71,7 @@
 
 				<!-- Codigo de Primer Pill - 'Editar' -->
 				
-				<div class="tab-pane fade" id="editarUsuario" role="tabpanel"
+				<div class="tab-pane fade show active" id="editarUsuario" role="tabpanel"
 					aria-labelledby="editarUsuario">
 
 					<h2>Edicion de Datos Empresariales</h2>
@@ -281,7 +281,7 @@
 
 				<!-- Creacion del cuarto Pill - Agregar Nuevos Empleados -->
 				
-				<div class="tab-pane fade show active" id="v-pills-home"
+				<div class="tab-pane fade" id="v-pills-home"
 					role="tabpanel" aria-labelledby="v-pills-home-tab">
 
 					<form method="get" action="/Sistema-Nomina/AgregarEmpleado"
