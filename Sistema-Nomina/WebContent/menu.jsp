@@ -40,9 +40,9 @@
                   
                      <a href="/Sistema-Nomina/edicionSistema">Sistema</a>
                      
-                     <a href="nomina.html">Calculo Nomina</a>
-                     <a href="finiquito.html">Finiquitos y Liquidaciones</a>      
-                     <a href="catalogoMenu.html">Catálogo</a>
+                     <a href="nomina.jsp">Calculo Nomina</a>
+                     <a href="finiquito.jsp">Finiquitos y Liquidaciones</a>      
+                     <a href="catalogoMenu.jsp">Catálogo</a>
                  </div>
 
              </section>

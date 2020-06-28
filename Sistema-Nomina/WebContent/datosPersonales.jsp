@@ -27,11 +27,17 @@
 					<img src="img/portfolio/imagen/logo.png">
 				</div>
 				<div class="enlaces-header">
-					<a href="menu.jsp">Inicio</a> <a href="/Sistema-Nomina/Index">Datos
-						personales</a> <a href="edicionSistema.jsp">Sistema</a> <a href="nomina.html">Calculo
-						Nomina</a> <a href="finiquito.html">Finiquitos y Liquidaciones</a> <a
-						href="catalogoMenu.html">Catálogo</a>
-				</div>
+                 
+                     <a href="menu.jsp">Inicio</a>
+                
+                     <a href="/Sistema-Nomina/Index">Datos personales</a>
+                  
+                     <a href="/Sistema-Nomina/edicionSistema">Sistema</a>
+                     
+                     <a href="nomina.jsp">Calculo Nomina</a>
+                     <a href="finiquito.jsp">Finiquitos y Liquidaciones</a>      
+                     <a href="catalogoMenu.jsp">Catálogo</a>
+                 </div>
 
 			</section>
 		</nav>

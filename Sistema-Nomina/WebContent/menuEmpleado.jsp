@@ -37,7 +37,7 @@
                      
                      <a href="#" data-toggle="modal" data-target="#exampleModal2">Nomina</a>
                      
-                     <a href="reportesEmpleado.html">Reportes</a>
+                     <a href="reportesEmpleado.jsp">Reportes</a>
                  </div>
                  <div class="hamburguer">
                      <i class="fas fa-bars"></i>
