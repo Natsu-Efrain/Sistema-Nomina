@@ -51,6 +51,8 @@ public class AgregarPuesto extends HttpServlet {
 				System.out.println(Id_area+nombre_puesto+salario+Horas);
 			    pdb.insercionInformacionPuesto(Id_area,nombre_puesto,salario,Horas);
 			    RequestDispatcher rd;
+			    String cadena=ProcesosDB.MensajeError;
+			    request.setAttribute("error", cadena);
 			    rd = request.getRequestDispatcher("/edicionSistema");
 				rd.forward(request, response);
 	}

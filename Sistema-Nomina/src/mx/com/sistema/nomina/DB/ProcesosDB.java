@@ -9,8 +9,10 @@ import java.sql.Connection;
 	import java.util.List;
 
 	import mx.com.sistema.nomina.Bin.*;;
-
+	
 	public class ProcesosDB extends ConexionDB {
+		
+		 public static String MensajeError;
 	//Metodo para el ingreso al sistema y a que pagina redirigir
 		public List<Usuario> consultaUsuario(String email,String password) {
 			connectDatabase();
@@ -152,6 +154,7 @@ import java.sql.Connection;
 						stm.execute("SELECT crearDataUsuario (("+valor+"),'"+creditoInf+"','"+metodO+"',"+parametroInf+");");
 						System.out.println("Se registro correctamente");
 					} catch (Exception e) {
+						MensajeError="ERROR: El numero de telefono ya esta registrado en la Base de datos, ingrese otro numero!! y/o  Error: El correo proporcionado ya se encuentra registrado en la BD";
 						System.out.println(e);
 					}
 					desconectar();
@@ -246,6 +249,7 @@ import java.sql.Connection;
                      
 						System.out.println("Se registro correctamente");
 					} catch (Exception e) {
+					    MensajeError="ERROR: El nombre del puesto ya se ha registrado en la Base de datos, ingrese otro nombre!!";
 						System.out.println(e);
 					}
 					desconectar();
