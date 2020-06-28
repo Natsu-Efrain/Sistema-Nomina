@@ -53,24 +53,234 @@
 		<div class="col-3">
 			<div class="nav flex-column nav-pills" id="v-pills-tab"
 				role="tablist" aria-orientation="vertical">
-				<a class="nav-link active" id="v-pills-home-tab" data-toggle="pill"
-					href="#editarUsuario" role="tab" aria-controls="v-pills-home"
-					aria-selected="true">Editar Empleado</a> <a class="nav-link"
-					id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile"
-					role="tab" aria-controls="v-pills-profile" aria-selected="false">Agregar
-					Puesto</a> <a class="nav-link" id="v-pills-messages-tab"
-					data-toggle="pill" href="#v-pills-messages" role="tab"
-					aria-controls="v-pills-messages" aria-selected="false">Crear
-					Area</a> <a class="nav-link" id="v-pills-messages-tab"
-					data-toggle="pill" href="#v-pills-home" role="tab"
-					aria-controls="v-pills-home" aria-selected="false">Agregar Empleado</a>
+				
+	 <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#editarUsuario" role="tab" 
+	 aria-controls="editarUsuario" aria-selected="false">Editar Usuario</a>
+      <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" 
+      aria-controls="v-pills-profile" aria-selected="false">Agregar Puesto</a>
+      <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" 
+      aria-controls="v-pills-messages" aria-selected="false">Crear Area</a>
+       <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" 
+       aria-controls="v-pills-home" aria-selected="true">Agregar Empleado</a>
+				
 			</div>
 		</div>
 
 		<div class="col-9">
 			<div class="tab-content" id="v-pills-tabContent">
 
-				<!-- Codigo de Primer Pill - 'Agregar Empleado' -->
+				<!-- Codigo de Primer Pill - 'Editar' -->
+				
+				<div class="tab-pane fade" id="editarUsuario" role="tabpanel"
+					aria-labelledby="editarUsuario">
+
+					<h2>Edicion de Datos Empresariales</h2>
+
+					<div class="form-group row">
+
+						<label for="idEmpleado" class="col-sm-2 col-form-label">Id
+							Empleado:</label>
+						<div class="col-sm-2">
+							<input type="number" class="form-control" id="idEmpleado">
+						</div>
+
+						<button type="button" class="btn btn-primary" data-toggle="modal"
+							data-target="#staticBackdrop">Buscar</button>
+					</div>
+
+
+					<div class="container" style="padding-top: 30px;">
+
+						<div class="row">
+							<div class="col-lg-5 mb-5">
+								<div class="card h-100">
+									<h4 class="card-header">Datos Actuales</h4>
+									<div class="card-body">
+
+										<div class="form-group row">
+											<label for="claseE" class="col-sm-4 col-form-label">Clase</label>
+											<div class="col-sm-8">
+												<input type="number" class="form-control" id="claseE"
+													disabled>
+											</div>
+
+											<label for="tipoPago" class="col-sm-4 col-form-label">Tipo
+												Pago</label>
+											<div class="col-sm-8">
+												<input type="text" class="form-control" id="tipoPago"
+													disabled>
+											</div>
+
+											<label for="puesto" class="col-sm-4 col-form-label">Puesto</label>
+											<div class="col-sm-8">
+												<input type="text" class="form-control" id="puesto" disabled>
+											</div>
+
+											<label for="area" class="col-sm-4 col-form-label">Area</label>
+											<div class="col-sm-8">
+												<input type="text" class="form-control" id="area" disabled>
+											</div>
+
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<!-- Formulario para editar los datos empresariales del empleado cargado -->
+
+							<div class="col-lg-5 mb-5">
+								<div class="card h-100">
+									<h4 class="card-header">Nuevos Datos</h4>
+									<div class="card-body">
+
+										<form name="nuevosDatos" onsubmit="return valforms(this)">
+
+											<div class="form-row">
+												<select class="custom-select my-1 mr-sm-2 col-5 mb-5"
+													id="claseEmpleado">
+													<option selected disabled>Clase Empleado</option>
+													<option value="1">Confianza</option>
+													<option value="2">Base</option>
+												</select> <select class="custom-select my-1 mr-sm-2 col-5 mb-5"
+													id="tipoPago">
+													<option selected disabled>Tipo Pago</option>
+													<option value="1">Semanal</option>
+													<option value="2">Quincenal</option>
+												</select>
+
+												<!--  Dependiendo del area que se eligio se deberan cargar los puestos que existen en dicha area-->
+
+											</div>
+
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<button type="button" class="btn btn-primary" data-toggle="modal"
+							data-target="#edicionDatos">Confirmar Edición</button>
+						<br> <br>
+
+					</div>
+
+
+				</div>
+				
+				<!-- Codigo de Segundo Pill - Creacion de Puestos-->
+
+				<div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
+					aria-labelledby="v-pills-profile-tab">
+
+					<h2>Creación de Puestos</h2>
+
+					<form method="get" action="/Sistema-Nomina/AgregarPuesto"
+						onsubmit="return valforms(this)">
+						<!-- Se genera una lista depegable de forma dinamica -->
+						<label for="Areas">Areas</label> <br> <select
+							class="custom-select my-1 mr-sm-2 col-5 mb-5" id="nombre_area"
+							name="nombre_area" required>
+							<%
+								ArrayList<String> areas = (ArrayList<String>) request.getAttribute("areas");
+							int zm = 0;
+
+							for (int x = 0; x < areas.size(); x++) {
+								zm = zm + 1;
+
+								out.print("<option value='" + areas.get(x) + "'>" + areas.get(x) + "</option>");
+							}
+							%>
+						</select> <br>
+
+						<div class="form-row">
+							<div class="col-md-3 mb-3">
+								<label for="nombrePuesto">Nombre del Puesto</label> <input
+									type="text" class="form-control" id="nombrePuesto" value=""
+									required name="nombrePuesto"
+									onChange="return valforms(this.form,this)"
+									editcheck="type=alpha=Ingrese un nombre de puesto;"
+									maxlength="30">
+							</div>
+							<div class="col-md-2 mb-3">
+								<label for="Salario">Salario del Puesto</label> <input
+									type="text" class="form-control" id="Salario" value="" required
+									name="Salario" onChange="return valforms(this.form,this)"
+									editcheck="type=NUM=Ingrese un parametro salario valido;"
+									maxlength="8">
+							</div>
+						</div>
+						<label for="Salario">Horas</label> <br> <select
+							class="custom-select my-1 mr-sm-2 col-5 mb-5" id="Horas"
+							name="Horas">
+							<option selected disabled>Seleccion el numero de horas</option>
+							<option value="4">4 Horas diarias</option>
+							<option value="5">5 Horas diarias</option>
+							<option value="6">6 Horas diarias</option>
+							<option value="7">7 Horas diarias</option>
+							<option value="8">8 Horas diarias</option>
+						</select> <br>
+						<button type="submit" class="btn btn-primary" data-toggle="modal"
+							data-target="#creacionPuesto">Agregar nuevo puesto</button>
+					</form>
+				</div>
+
+				<!-- Creacion del tercel Pill - Creacion de Nuevas Areas -->
+
+
+				<div class="tab-pane fade" id="v-pills-messages" role="tabpanel"
+					aria-labelledby="v-pills-messages-tab">
+
+					<!-- Se genera una lista depegable de forma dinamica -->
+					<label for="Areas_Existentes">Areas Existentes</label> <br> <select
+						class="custom-select my-1 mr-sm-2 col-5 mb-5" id="nombre_area"
+						name="nombre_area" required>
+						<%
+							ArrayList<String> areas_existentes = (ArrayList<String>) request.getAttribute("areas_existentes");
+						int ea = 0;
+
+						for (int x = 0; x < areas_existentes.size(); x++) {
+							ea = ea + 1;
+
+							out.print("<option disabled='disabled' value='" + areas_existentes.get(x) + "'>" + areas_existentes.get(x)
+							+ "</option>");
+						}
+						%>
+					</select>
+					<form method="get" action="/Sistema-Nomina/AgregarArea"
+						onsubmit="return valforms(this)">
+						<div class="form-group">
+
+							<div class="col-md-3 mb-3">
+								<label for="nuevaArea" class="col-form-label">Nombre de
+									nueva Area:</label> <input type="text" class="form-control"
+									id="nombre_area" name="nombre_area"
+									required onchange="return valforms(this.form,this)"
+									editcheck="type=alpha=Ingrese un nombre de area valido;"
+									maxlength="30" >
+							</div>
+						</div>
+
+						<div class="form-group">
+
+							<div class="col-md-4 mb-3">
+								<label for="valesDespensa" class="col-form-label">Vales
+									de despensa correspondiente ($):</label> <input type="text"
+									class="form-control" id="valesDespensa"
+									onChange="return valforms(this.form,this)"
+									editcheck="type=num=Ingrese un valor valido;" maxlength="8"
+									name="vales_despensa" required="required">
+							</div>
+						</div>
+						<button type="submit" class="btn btn-primary" data-toggle="modal"
+							">Crear</button>
+					</form>
+
+
+				</div>
+
+				<!-- Creacion del cuarto Pill - Agregar Nuevos Empleados -->
+				
 				<div class="tab-pane fade show active" id="v-pills-home"
 					role="tabpanel" aria-labelledby="v-pills-home-tab">
 
@@ -268,221 +478,7 @@
 
 				</div>
 
-				<!-- Codigo de Segundo Pill - Creacion de Puestos-->
 
-				<div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
-					aria-labelledby="v-pills-profile-tab">
-
-					<h2>Creación de Puestos</h2>
-
-					<form method="get" action="/Sistema-Nomina/AgregarPuesto"
-						onsubmit="return valforms(this)">
-						<!-- Se genera una lista depegable de forma dinamica -->
-						<label for="Areas">Areas</label> <br> <select
-							class="custom-select my-1 mr-sm-2 col-5 mb-5" id="nombre_area"
-							name="nombre_area" required>
-							<%
-								ArrayList<String> areas = (ArrayList<String>) request.getAttribute("areas");
-							int zm = 0;
-
-							for (int x = 0; x < areas.size(); x++) {
-								zm = zm + 1;
-
-								out.print("<option value='" + areas.get(x) + "'>" + areas.get(x) + "</option>");
-							}
-							%>
-						</select> <br>
-
-						<div class="form-row">
-							<div class="col-md-3 mb-3">
-								<label for="nombrePuesto">Nombre del Puesto</label> <input
-									type="text" class="form-control" id="nombrePuesto" value=""
-									required name="nombrePuesto"
-									onChange="return valforms(this.form,this)"
-									editcheck="type=alpha=Ingrese un nombre de puesto;"
-									maxlength="30">
-							</div>
-							<div class="col-md-2 mb-3">
-								<label for="Salario">Salario del Puesto</label> <input
-									type="text" class="form-control" id="Salario" value="" required
-									name="Salario" onChange="return valforms(this.form,this)"
-									editcheck="type=NUM=Ingrese un parametro salario valido;"
-									maxlength="8">
-							</div>
-						</div>
-						<label for="Salario">Horas</label> <br> <select
-							class="custom-select my-1 mr-sm-2 col-5 mb-5" id="Horas"
-							name="Horas">
-							<option selected disabled>Seleccion el numero de horas</option>
-							<option value="4">4 Horas diarias</option>
-							<option value="5">5 Horas diarias</option>
-							<option value="6">6 Horas diarias</option>
-							<option value="7">7 Horas diarias</option>
-							<option value="8">8 Horas diarias</option>
-						</select> <br>
-						<button type="submit" class="btn btn-primary" data-toggle="modal"
-							data-target="#creacionPuesto">Agregar nuevo puesto</button>
-					</form>
-				</div>
-
-				<!-- Creacion del tercel Pill - Creacion de Nuevas Areas -->
-
-
-				<div class="tab-pane fade" id="v-pills-messages" role="tabpanel"
-					aria-labelledby="v-pills-messages-tab">
-
-					<!-- Se genera una lista depegable de forma dinamica -->
-					<label for="Areas_Existentes">Areas Existentes</label> <br> <select
-						class="custom-select my-1 mr-sm-2 col-5 mb-5" id="nombre_area"
-						name="nombre_area" required>
-						<%
-							ArrayList<String> areas_existentes = (ArrayList<String>) request.getAttribute("areas_existentes");
-						int ea = 0;
-
-						for (int x = 0; x < areas_existentes.size(); x++) {
-							ea = ea + 1;
-
-							out.print("<option disabled='disabled' value='" + areas_existentes.get(x) + "'>" + areas_existentes.get(x)
-							+ "</option>");
-						}
-						%>
-					</select>
-					<form method="get" action="/Sistema-Nomina/AgregarArea"
-						onsubmit="return valforms(this)">
-						<div class="form-group">
-
-							<div class="col-md-3 mb-3">
-								<label for="nuevaArea" class="col-form-label">Nombre de
-									nueva Area:</label> <input type="text" class="form-control"
-									id="nombre_area" name="nombre_area"
-									required onchange="return valforms(this.form,this)"
-									editcheck="type=alpha=Ingrese un nombre de area valido;"
-									maxlength="30" >
-							</div>
-						</div>
-
-						<div class="form-group">
-
-							<div class="col-md-4 mb-3">
-								<label for="valesDespensa" class="col-form-label">Vales
-									de despensa correspondiente ($):</label> <input type="text"
-									class="form-control" id="valesDespensa"
-									onChange="return valforms(this.form,this)"
-									editcheck="type=num=Ingrese un valor valido;" maxlength="8"
-									name="vales_despensa" required="required">
-							</div>
-						</div>
-						<button type="submit" class="btn btn-primary" data-toggle="modal"
-							">Crear</button>
-					</form>
-
-
-				</div>
-
-				<!-- Creacion del cuarto Pill - Editar Datos Empresariales de los Empleados -->
-
-
-				<div class="tab-pane fade" id="editarUsuario" role="tabpanel"
-					aria-labelledby="editarUsuario">
-
-					<h2>Edicion de Datos Empresariales</h2>
-
-					<div class="form-group row">
-
-						<label for="idEmpleado" class="col-sm-2 col-form-label">Id
-							Empleado:</label>
-						<div class="col-sm-2">
-							<input type="number" class="form-control" id="idEmpleado">
-						</div>
-
-						<button type="button" class="btn btn-primary" data-toggle="modal"
-							data-target="#staticBackdrop">Buscar</button>
-					</div>
-
-
-					<div class="container" style="padding-top: 30px;">
-
-						<div class="row">
-							<div class="col-lg-5 mb-5">
-								<div class="card h-100">
-									<h4 class="card-header">Datos Actuales</h4>
-									<div class="card-body">
-
-										<div class="form-group row">
-											<label for="claseE" class="col-sm-4 col-form-label">Clase</label>
-											<div class="col-sm-8">
-												<input type="number" class="form-control" id="claseE"
-													disabled>
-											</div>
-
-											<label for="tipoPago" class="col-sm-4 col-form-label">Tipo
-												Pago</label>
-											<div class="col-sm-8">
-												<input type="text" class="form-control" id="tipoPago"
-													disabled>
-											</div>
-
-											<label for="puesto" class="col-sm-4 col-form-label">Puesto</label>
-											<div class="col-sm-8">
-												<input type="text" class="form-control" id="puesto" disabled>
-											</div>
-
-											<label for="area" class="col-sm-4 col-form-label">Area</label>
-											<div class="col-sm-8">
-												<input type="text" class="form-control" id="area" disabled>
-											</div>
-
-										</div>
-
-									</div>
-								</div>
-							</div>
-
-							<!-- Formulario para editar los datos empresariales del empleado cargado -->
-
-							<div class="col-lg-5 mb-5">
-								<div class="card h-100">
-									<h4 class="card-header">Nuevos Datos</h4>
-									<div class="card-body">
-
-										<form name="nuevosDatos" onsubmit="return valforms(this)">
-
-											<div class="form-row">
-												<select class="custom-select my-1 mr-sm-2 col-5 mb-5"
-													id="claseEmpleado">
-													<option selected disabled>Clase Empleado</option>
-													<option value="1">Confianza</option>
-													<option value="2">Base</option>
-												</select> <select class="custom-select my-1 mr-sm-2 col-5 mb-5"
-													id="tipoPago">
-													<option selected disabled>Tipo Pago</option>
-													<option value="1">Semanal</option>
-													<option value="2">Quincenal</option>
-												</select>
-
-
-
-												<!--  Dependiendo del area que se eligio se deberan cargar los puestos que existen en dicha area-->
-
-
-
-											</div>
-
-										</form>
-
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<button type="button" class="btn btn-primary" data-toggle="modal"
-							data-target="#edicionDatos">Confirmar Edición</button>
-						<br> <br>
-
-					</div>
-
-
-				</div>
 
 			</div>
 		</div>
