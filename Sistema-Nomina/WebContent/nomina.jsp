@@ -31,14 +31,12 @@
                      <img src="img/portfolio/imagen/logo.png">
                  </div>
                  <div class="enlaces-header">
-                     <a href="index.html">Inicio</a>
-                     <a  href="datosPersonales.html">Datos personales</a>
-                     
-                     <a href="#" data-toggle="modal" data-target="#exampleModal">Empleados</a>
-                     
-                     <a href="nomina.html">Calculo Nomina</a>
-                     <a href="finiquito.html">Finiquitos y Liquidaciones</a>      
-                     <a href="catalogoMenu.html">Catálogo</a>
+                                      <a href="menu.jsp">Inicio</a>               
+                     <a href="/Sistema-Nomina/Index">Datos personales</a>                   
+                     <a href="nomina.jsp">Calculo Nomina</a>
+                     <a href="finiquitoLiquidacion.jsp">Finiquitos y Liquidaciones</a>      
+                     <a href="catalogoMenu.jsp">Catálogo</a>
+                     <a href="/Sistema-Nomina/edicionSistema">Sistema</a>
                  </div>
 
              </section>
