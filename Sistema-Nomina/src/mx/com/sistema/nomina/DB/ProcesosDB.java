@@ -322,9 +322,28 @@ import java.sql.Connection;
 					}
 					desconectar();
 				}	
+				/*
+				public void generar(String Id_empleado,String faltas, String retardos,String horas)
+				{
+					connectDatabase();
+
+					try {
+
+						Statement stm = connection.createStatement();
+						
+                        
+						stm.execute("INSERT INTO Deducciones (Id_deduccion) values ('"+Id_Data+Id_empleado+Periodo+"');");
+						String Id_Data="SELECT Id_Data  FROM dataUsuario where Id_Empleado="+Id_Empleado+";"
+					    String Id_deduccion="SELECT Id_Deduccion  FROM Deducciones where Id_Deduccion='"+Id_Data+Id_Empleado+Periodo+"';"
+						opcion="1";
+						System.out.println("Se actualizo correctamente");
+					} catch (Exception e) {
+					    opcion="5";
+						System.out.println(e);
+					}
+					desconectar();
+				}
 				
-				
-				
-				
+				*/
 
 }

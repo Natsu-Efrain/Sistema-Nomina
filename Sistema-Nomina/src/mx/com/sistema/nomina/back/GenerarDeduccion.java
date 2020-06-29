@@ -35,7 +35,8 @@ public class GenerarDeduccion extends HttpServlet {
 				String retardos=request.getParameter("retardos");
 				String horas=request.getParameter("horas");
                 ProcesosDB pdb=new ProcesosDB();
-                pdb.generar(id_empleado, faltas, retardos, horas);
+                /*
+                pdb.generar(id_empleado, faltas, retardos, horas);*/
 	}
 
 	/**

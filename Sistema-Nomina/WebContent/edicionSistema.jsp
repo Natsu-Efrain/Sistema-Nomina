@@ -292,7 +292,7 @@
 						</div>
 						<label for="Salario">Horas</label> <br> <select
 							class="custom-select my-1 mr-sm-2 col-5 mb-5" id="Horas"
-							name="Horas">
+							name="Horas" required="required">
 							<option selected disabled>Seleccion el numero de horas</option>
 							<option value="4">4 Horas diarias</option>
 							<option value="5">5 Horas diarias</option>

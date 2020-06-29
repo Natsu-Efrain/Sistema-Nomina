@@ -10,7 +10,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Liquidacion</title>
+  <title>Busqueda de Id para nomina</title>
 
   <!-- Custom fonts for this theme -->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -45,16 +45,20 @@
          <div class="contenedor">
             <section class="contenido-header">
                 <section class="textos-header">
+                <form action="nominaCalculo.jsp"
+						onsubmit="return valforms(this)">
                     <h1>Nómina</h1>
                     <p>Para poder continuar con el proceso de nómina se deberá ingresar el Id del empleado.</p>
                       <div class="form-group row">                        
                           <label for="inputId" class="col-sm-4 col-form-label">Id Empleado:</label>
                           <div class="col-sm-8">
-                              <input type="number" class="form-control" id="idEmpleado">
+                              <input type="text" class="form-control" id="idEmpleado" name="idEmpleado" required="required" maxlength="25" onChange="return valforms(this.form,this)"
+									editcheck="type=INT=Ingrese un id empleado valido" >
                           </div>
                     </div>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">Buscar
+                    <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">Buscar
                     </button>
+                    </form>
                 </section>
                 <img src="img/portfolio/imagen/primera.svg">
             </section>

@@ -69,17 +69,19 @@
 								<label for="idEmpleado" class="col-sm-4 col-form-label">Id
 									Empleado</label>
 								<div class="col-sm-8">
-									<input type="text" class="form-control" id="idEmpleado" name="idEmpleado">
+								<% out.print("<input disabled='disabled' type='text' class='form-control' id='idEmpleado' name='idEmpleado' value="+(String)request.getParameter("idEmpleado")+">"); %>	
 								</div>
 
 								<label for="nombre" class="col-sm-4 col-form-label">Faltas</label>
 								<div class="col-sm-8">
-									<input type="text" class="form-control" id="faltas" name="faltas">
+									<input type="text" class="form-control" id="faltas" name="faltas" required="required" maxlength="2" onChange="return valforms(this.form,this)"
+									editcheck="type=INT=Ingrese un numero valido" >
 								</div>
 
 								<label for="apellidoP" class="col-sm-4 col-form-label">Retardos</label>
 								<div class="col-sm-8">
-									<input type="text" class="form-control" id="retardos" name="retardos">
+									<input type="text" class="form-control" id="retardos" name="retardos" required="required" maxlength="2" onChange="return valforms(this.form,this)"
+									editcheck="type=INT=Ingrese un numero valido">
 								</div>
 
 
@@ -99,7 +101,7 @@
 								<label for="calle" class="col-sm-4 col-form-label">Horas</label>
 								<div class="col-sm-8">
 									<input type="text" class="form-control" id="horas" 
-										name="horas">
+										name="horas" required="required">
 								</div>
 
 
