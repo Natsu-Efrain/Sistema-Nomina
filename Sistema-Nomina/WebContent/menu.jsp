@@ -48,8 +48,8 @@
             <section class="contenido-header">
                 <section class="textos-header">
                     <h1>Nóminas</h1>
-                    <p>Consulta y visualización de tus nóminas cuando sea necesario, además de poder descargarlas de forma segura.</p>
-                    <a href="visualizacionNomina.jsp" data-toggle="modal" data-target="#exampleModal2">Ver mas...</a>
+                    <p>Creacion de las nominas para los empleados del Sistema.</p>
+                    <a href="nomina.jsp">Ver mas...</a>
                 </section>
                 <img src="img/portfolio/imagen/primera.svg">
             </section>
