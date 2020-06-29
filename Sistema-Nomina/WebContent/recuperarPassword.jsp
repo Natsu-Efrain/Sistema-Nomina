@@ -30,9 +30,15 @@
 			String error = (String) request.getAttribute("error");
 		if (error != null)
 			if (error.equals("Si")) {
-				out.print("<p>Ingreso un correo no registrado</p>");
+				out.print("<div class='alert alert-warning alert-dismissible fade show' role='alert'>"
+						+ "<strong>No se ha enviado!</strong> EL correo proporcionado no es valido o no existe "
+						+ "<button type='button' class='close' data-dismiss='alert' aria-label='Close'>"
+						+ "<span aria-hidden='true'>&times;</span>" + "</button>" + "</div>");
 			} else if (error.equals("No")) {
-				out.print("<p>Se ha enviado un correo con la informacion, en unos momentos le llegara</p>");
+				out.print("<div class='alert alert-warning alert-dismissible fade show' role='alert'>"
+						+ "<strong>Se ha enviado!</strong> En unos momentos llegara un correo con informacion de su contraseña"
+						+ "<button type='button' class='close' data-dismiss='alert' aria-label='Close'>"
+						+ "<span aria-hidden='true'>&times;</span>" + "</button>" + "</div>");
 			}
 		%>
 		<form class="form__reg" method="get"
@@ -47,7 +53,7 @@
 			<input type="text" id="email" name="email"
 				placeholder="&#9993; Correo electrónico"
 				editcheck="minlen=5=&iexcl;Ingrese un correo valido por ejemplo alpha@ejemplo.com;type=email"
-				maxlength="30" onChange="return valforms(this.form,this)" />
+				maxlength="30" onChange="return valforms(this.form,this)" required="required" />
 
 
 

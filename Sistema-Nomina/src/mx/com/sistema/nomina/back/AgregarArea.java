@@ -38,8 +38,6 @@ public class AgregarArea extends HttpServlet {
 		pdb.insercionInformacionArea(nombre_area, vales_despensa);
 		//De esta forma regresamos al jsp  original y si ocurre un error mostrarlo
 	    RequestDispatcher rd;
-	    String cadena=ProcesosDB.MensajeError;
-	    request.setAttribute("error", cadena);
 	    rd = request.getRequestDispatcher("/edicionSistema");
 		rd.forward(request, response);
 	}

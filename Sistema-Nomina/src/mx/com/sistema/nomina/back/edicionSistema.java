@@ -64,12 +64,14 @@ public class edicionSistema extends HttpServlet {
 				request.setAttribute("puestos", puestos);
 				request.setAttribute("areas_existentes", areas);
 				request.setAttribute("puestos_editar", puestos);
+                request.setAttribute("opcion",pdb.opcion);
+	            
 				Calendar fecha = new GregorianCalendar();
 				int año = fecha.get(Calendar.YEAR); 
 				int mes=fecha.get(Calendar.MONTH)+1;
 				int dia=fecha.get(Calendar.DAY_OF_MONTH);
 				System.out.println(año+"-"+mes+"-"+dia); 
-				
+			
 				
 				
 				
@@ -85,7 +87,7 @@ public class edicionSistema extends HttpServlet {
 				request.setAttribute("fecha_ingreso",año+"-"+mes+"-"+dia);
 				rd = request.getRequestDispatcher("/edicionSistema.jsp");
 				rd.forward(request, response);
-				
+				pdb.opcion=null;
 	}
 
 	/**

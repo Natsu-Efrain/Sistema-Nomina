@@ -12,7 +12,8 @@ import java.sql.Connection;
 	
 	public class ProcesosDB extends ConexionDB { 
 		
-		 public static String MensajeError;
+		
+		 public static String opcion;
 	//Metodo para el ingreso al sistema y a que pagina redirigir
 		public List<Usuario> consultaUsuario(String email,String password) {
 			connectDatabase();
@@ -152,9 +153,10 @@ import java.sql.Connection;
 						stm.execute("INSERT INTO Usuario VALUES (Default,'"+nombre+"','"+apellidoP+"','"+apellidoM+"',"+num_telefono+",'"+calle+"','"+num_exterior+"','"+colonia+"','"+delegacion+"','"+estado+"',"+codigo_postal+",'"+clase+"','"+Tipo_Pago+"', '"+Fecha_Ingreso+"', 'No', '"+Correo+"', '"+contrasena+"',"+Id_puesto+",'Si');");
                         String valor="SELECT Id_Empleado FROM Usuario WHERE nombre='"+nombre+"' and apellido_p='"+apellidoP+"' and apellido_m='"+apellidoM+"'";
 						stm.execute("SELECT crearDataUsuario (("+valor+"),'"+creditoInf+"','"+metodO+"',"+parametroInf+");");
+						opcion="4";
 						System.out.println("Se registro correctamente");
 					} catch (Exception e) {
-						MensajeError="ERROR: El numero de telefono ya esta registrado en la Base de datos, ingrese otro numero!! y/o  Error: El correo proporcionado ya se encuentra registrado en la BD";
+						opcion="5";
 						System.out.println(e);
 					}
 					desconectar();
@@ -246,10 +248,10 @@ import java.sql.Connection;
 						
                       
 						stm.execute("INSERT INTO Puesto VALUES (Default,"+Id_area+",'"+nombre_puesto+"',"+salario+","+Horas+");");
-                     
+						opcion="2";
 						System.out.println("Se registro correctamente");
 					} catch (Exception e) {
-					    MensajeError="ERROR: El nombre del puesto ya se ha registrado en la Base de datos, ingrese otro nombre!!";
+						opcion="5";
 						System.out.println(e);
 					}
 					desconectar();
@@ -265,10 +267,10 @@ import java.sql.Connection;
 						
                       
 						stm.execute("INSERT INTO Area VALUES (Default,'"+nombre_area+"',"+vales_despensa+");");
-                     
+						opcion="3";
 						System.out.println("Se registro correctamente");
 					} catch (Exception e) {
-					    MensajeError="ERROR: El nombre del area ya se ha registrado en la Base de datos, ingrese otro nombre!!";
+						opcion="5";
 						System.out.println(e);
 					}
 					desconectar();
@@ -312,49 +314,16 @@ import java.sql.Connection;
 						
                         String Id_puesto="Select Id_puesto from Puesto where nombre_puesto='"+puesto+"'";
 						stm.execute("update usuario set clase='"+clase+"',tipo_pago='"+tipo_pago+"', id_puesto=("+Id_puesto+") where id_empleado=" + id_empleado + ";");
+						opcion="1";
 						System.out.println("Se actualizo correctamente");
 					} catch (Exception e) {
-					    MensajeError="ERROR: El nombre del area ya se ha registrado en la Base de datos, ingrese otro nombre!!";
+					    opcion="5";
 						System.out.println(e);
 					}
 					desconectar();
 				}	
 				
-				//Se modifican datalles Empresariales
-				public void generar(String id_empleado,String faltas,String retardos,String horas) {
-					connectDatabase();
-
-					try {
-
-						Statement stm = connection.createStatement();
-						
-                        String Id_puesto="Select Id_puesto from Puesto where nombre_puesto='"+puesto+"'";
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-						stm.execute("SELECT totalDeducciones("+
-								"(SELECT ISR FROM Deducciones WHERE Id_Deduccion = '')," + 
-								"(SELECT Infanavit FROM Deducciones WHERE Id_Deduccion = '')," + 
-								"(SELECT IMSS FROM Deducciones WHERE Id_Deduccion = ''), "+ 
-								"(SELECT Total_FR FROM Deducciones WHERE Id_Deduccion = '')," + 
-								"(SELECT Pago_Pre FROM Deducciones WHERE Id_Deduccion = '')," + 
-								"(SELECT Fondo_A FROM Deducciones WHERE Id_Deduccion = '')," + 
-								"(SELECT Id_Deduccion FROM Deducciones WHERE Id_Deduccion = ''));");
-						System.out.println("Se actualizo correctamente");
-					} catch (Exception e) {
-					    MensajeError="ERROR: El nombre del area ya se ha registrado en la Base de datos, ingrese otro nombre!!";
-						System.out.println(e);
-					}
-					desconectar();
-				}	
+				
 				
 				
 

@@ -43,8 +43,6 @@ public class EditarEmpresariales extends HttpServlet {
 		pdb.modificacionDetallesEmpresariales(id_empleado, clase, tipo_pago, puesto);
 		// De esta forma regresamos al jsp original y si ocurre un error mostrarlo
 		RequestDispatcher rd;
-		String cadena = ProcesosDB.MensajeError;
-		request.setAttribute("error", cadena);
 		rd = request.getRequestDispatcher("/edicionSistema");
 		rd.forward(request, response);
 

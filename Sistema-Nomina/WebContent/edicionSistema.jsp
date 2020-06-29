@@ -48,7 +48,46 @@
 		</nav>
 		<br> <br>
 	</header>
+	<%
+		String opcion = (String) request.getAttribute("opcion");
 
+	if (opcion != null)
+	{
+		int op = Integer.parseInt(opcion);
+		switch (op) {
+			case 1 :
+				out.print("<div class='alert alert-warning alert-dismissible fade show' role='alert'>"
+						+ "<strong>Se ha registrado!</strong> La base de datos se ha actualizado correctamente con sus registro"
+						+ "<button type='button' class='close' data-dismiss='alert' aria-label='Close'>"
+						+ "<span aria-hidden='true'>&times;</span>" + "</button>" + "</div>");
+		break;
+			case 2 :
+				out.print("<div class='alert alert-warning alert-dismissible fade show' role='alert'>"
+						+ "<strong>Se ha registrado!</strong> La base de datos se ha actualizado correctamente con sus registro"
+						+ "<button type='button' class='close' data-dismiss='alert' aria-label='Close'>"
+						+ "<span aria-hidden='true'>&times;</span>" + "</button>" + "</div>");
+		break;
+			case 3 :
+				out.print("<div class='alert alert-warning alert-dismissible fade show' role='alert'>"
+						+ "<strong>Se ha registrado!</strong> La base de datos se ha actualizado correctamente con sus registro"
+						+ "<button type='button' class='close' data-dismiss='alert' aria-label='Close'>"
+						+ "<span aria-hidden='true'>&times;</span>" + "</button>" + "</div>");
+		break;
+			case 4 :
+				out.print("<div class='alert alert-warning alert-dismissible fade show' role='alert'>"
+						+ "<strong>Se ha registrado!</strong> La base de datos se ha actualizado correctamente con sus registro"
+						+ "<button type='button' class='close' data-dismiss='alert' aria-label='Close'>"
+						+ "<span aria-hidden='true'>&times;</span>" + "</button>" + "</div>");
+		break;
+			default :
+				out.print("<div class='alert alert-warning alert-dismissible fade show' role='alert'>"
+						+ "<strong>No Se ha registrado o modificado!</strong> Debido algun dato erroneo o que no se pude repetir como correo,numero de telefono y nombre de puesto :D"
+						+ "<button type='button' class='close' data-dismiss='alert' aria-label='Close'>"
+						+ "<span aria-hidden='true'>&times;</span>" + "</button>" + "</div>");
+		break;
+		}
+	}
+	%>
 	<div class="row">
 		<div class="col-3">
 			<div class="nav flex-column nav-pills" id="v-pills-tab"
@@ -414,10 +453,8 @@
 
 						<!-- Añadido onchange para cargar los tip_ps -->
 						<label for="claE">Clase de Empleado</label> <br> <select
-							name="cla" id="cla"
-							onchange="cargatip_p();" 
-							class="custom-select my-1 mr-sm-2 col-5 mb-5" 
-							required="required">
+							name="cla" id="cla" onchange="cargatip_p();"
+							class="custom-select my-1 mr-sm-2 col-5 mb-5" required="required">
 							<!-- Hay que terminar los options -->
 							<!-- 
                    Eliminado de value la llamada a la función,
@@ -496,7 +533,7 @@
 							cargarcla();
 						</script>
 
-						<br> 
+						<br>
 
 						<div class="col-md-2 mb-3">
 							<label for="Fecha_ingreso">Fecha Ingreso</label> <input

@@ -75,8 +75,6 @@ public class AgregarEmpleado extends HttpServlet {
 		
 	    pdb.insercionInformacionEmpleado(nombre, apellidoP, apellidoM, num_telefono, calle, num_exterior, colonia, delegacion, estado, codigo_postal, clase, Tipo_Pago, Fecha_Ingreso, Correo, contrasena, Id_puesto,creditoInf,metodO,parametroInf);
 	    RequestDispatcher rd;
-	    String cadena=ProcesosDB.MensajeError;
-	    request.setAttribute("error", cadena);
 	    rd = request.getRequestDispatcher("/edicionSistema");
 		rd.forward(request, response);
 
