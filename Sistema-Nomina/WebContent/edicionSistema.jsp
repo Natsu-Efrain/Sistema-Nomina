@@ -79,7 +79,7 @@
 						+ "<button type='button' class='close' data-dismiss='alert' aria-label='Close'>"
 						+ "<span aria-hidden='true'>&times;</span>" + "</button>" + "</div>");
 		break;
-			default :
+			case 5 :
 				out.print("<div class='alert alert-warning alert-dismissible fade show' role='alert'>"
 						+ "<strong>No Se ha registrado o modificado!</strong> Debido algun dato erroneo o que no se pude repetir como correo,numero de telefono y nombre de puesto :D"
 						+ "<button type='button' class='close' data-dismiss='alert' aria-label='Close'>"
