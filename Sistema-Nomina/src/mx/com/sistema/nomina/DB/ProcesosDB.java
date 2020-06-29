@@ -10,7 +10,7 @@ import java.sql.Connection;
 
 	import mx.com.sistema.nomina.Bin.*;;
 	
-	public class ProcesosDB extends ConexionDB {
+	public class ProcesosDB extends ConexionDB { 
 		
 		 public static String MensajeError;
 	//Metodo para el ingreso al sistema y a que pagina redirigir

@@ -50,8 +50,8 @@ public class AgregarEmpleado extends HttpServlet {
 		String delegacion = request.getParameter("delegacion");
 		String estado = request.getParameter("estado");
 		String codigo_postal = request.getParameter("CP");
-		String clase = request.getParameter("clase");
-		String Tipo_Pago = request.getParameter("tipo_pago");
+		String clase = request.getParameter("cla");
+		String Tipo_Pago = request.getParameter("tip_p");
 		String Fecha_Ingreso = request.getParameter("fechaIngreso");
 		System.out.print(Fecha_Ingreso);
 		String Correo = request.getParameter("correo");

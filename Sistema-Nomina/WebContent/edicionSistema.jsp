@@ -37,13 +37,12 @@
 					<img src="img/portfolio/imagen/logo.png">
 				</div>
 				<div class="enlaces-header">
-				                     <a href="menu.jsp">Inicio</a>               
-                     <a href="/Sistema-Nomina/Index">Datos personales</a>                   
-                     <a href="nomina.jsp">Calculo Nomina</a>
-                     <a href="finiquitoLiquidacion.jsp">Finiquitos y Liquidaciones</a>      
-                     <a href="catalogoMenu.jsp">Catálogo</a>
-                     <a href="/Sistema-Nomina/edicionSistema">Sistema</a>
-                 </div>
+					<a href="menu.jsp">Inicio</a> <a href="/Sistema-Nomina/Index">Datos
+						personales</a> <a href="nomina.jsp">Calculo Nomina</a> <a
+						href="finiquitoLiquidacion.jsp">Finiquitos y Liquidaciones</a> <a
+						href="catalogoMenu.jsp">Catálogo</a> <a
+						href="/Sistema-Nomina/edicionSistema">Sistema</a>
+				</div>
 
 			</section>
 		</nav>
@@ -145,14 +144,14 @@
 									<h4 class="card-header">Nuevos Datos</h4>
 									<div class="card-body">
 
-										<form name="nuevosDatos" onsubmit="return valforms(this)" action="/Sistema-Nomina/EditarEmpresariales" method="get">
+										<form name="nuevosDatos" onsubmit="return valforms(this)"
+											action="/Sistema-Nomina/EditarEmpresariales" method="get">
 
 
 											<!-- Añadido onchange para cargar los tipo_pagos -->
-											<label for="claseE">Clase de Empleado</label> <br>
-											<select class="custom-select my-1 mr-sm-2 col-5 mb-5"
-												name="clase" id="clase" onchange="cargaTipo_Pago();"
-												required="required">
+											<label for="claseE">Clase de Empleado</label> <br> <select
+												class="custom-select my-1 mr-sm-2 col-5 mb-5" name="clase"
+												id="clase" onchange="cargaTipo_Pago();" required="required">
 												<!-- Hay que terminar los options -->
 												<!-- 
                    Eliminado de value la llamada a la función,
@@ -176,9 +175,9 @@
 													tipo_pago...</option>
 											</select> <br>
 											<!-- Se genera una lista depegable de forma dinamica -->
-											<label for="Puestos">Puestos</label> <br>
-											<select class="custom-select my-1 mr-sm-2 col-5 mb-5"
-												id="puesto" name="puesto" required>
+											<label for="Puestos">Puestos</label> <br> <select
+												class="custom-select my-1 mr-sm-2 col-5 mb-5" id="puesto"
+												name="puesto" required>
 												<%
 													ArrayList<String> puestos_Editar = (ArrayList<String>) request.getAttribute("puestos_editar");
 												int e = 0;
@@ -195,8 +194,7 @@
 
 											<br>
 											<button type="submit" class="btn btn-primary"
-												data-toggle="modal" >Confirmar
-												Edición</button>
+												data-toggle="modal">Confirmar Edición</button>
 										</form>
 									</div>
 								</div>
@@ -414,9 +412,12 @@
 						<br>
 						<h2>Datos Empresariales</h2>
 
-						<!-- Añadido onchange para cargar los tipo_pagos -->
-						<select class="custom-select my-1 mr-sm-2 col-5 mb-5" name="clase"
-							id="clase" onchange="cargaTipo_Pago();" required="required">
+						<!-- Añadido onchange para cargar los tip_ps -->
+						<label for="claE">Clase de Empleado</label> <br> <select
+							name="cla" id="cla"
+							onchange="cargatip_p();" 
+							class="custom-select my-1 mr-sm-2 col-5 mb-5" 
+							required="required">
 							<!-- Hay que terminar los options -->
 							<!-- 
                    Eliminado de value la llamada a la función,
@@ -426,8 +427,9 @@
                 -->
 							<option value="" disabled="disabled">Seleccione una
 								clase...</option>
-						</select> <select class="custom-select my-1 mr-sm-2 col-5 mb-5"
-							name="tipo_pago" id="tipo_pago">
+						</select><br> <label for="Tipo_de_pagos">Tipo de pagos</label><br>
+						<select class="custom-select my-1 mr-sm-2 col-5 mb-5" name="tip_p"
+							id="tip_p" required="required">
 							<!-- Hay que terminar los options -->
 							<!-- 
                    Eliminado de value la llamada a la función,
@@ -435,9 +437,66 @@
                    lo haga es totalmente innecesario, 
                    lo correcto es usar el evento onchange 
                 -->
-							<option value="" disabled="disabled">Seleccione un
-								tipo_pago...</option>
-						</select>
+							<option value="" disabled="disabled">Seleccione un tip
+								de pago...</option>
+						</select> <br>
+						<script type="text/javascript">
+							function cargarcla() {
+								var array = [ "Base", "Confianza" ];
+								array.sort();
+								addOptions("cla", array);
+							}
+
+							//Función para agregar opciones a un <select>.
+							function addOptions(domElement, array) {
+								var selector = document
+										.getElementsByName(domElement)[0];
+								for (cla in array) {
+									var opcion = document
+											.createElement("option");
+									opcion.text = array[cla];
+									// Añadimos un value a los option para hacer mas facil escoger los tip_ps
+									opcion.value = array[cla].toLowerCase()
+									selector.add(opcion);
+								}
+							}
+
+							function cargatip_p() {
+								// Objeto de clas con tip_ps
+								var listatip_ps = {
+									base : [ "Semanal", "Quincenal" ],
+									confianza : [ "Quincenal" ]
+								}
+
+								var clas = document.getElementById('cla')
+								var tip_ps = document.getElementById('tip_p')
+								var claSeleccionada = clas.value
+
+								// Se limpian los tip_ps
+								tip_ps.innerHTML = '<option value="" required="required" disabled="disabled">Seleccione un Tipo de pago...</option>'
+
+								if (claSeleccionada !== '') {
+									// Se seleccionan los tip_ps y se ordenan
+									claSeleccionada = listatip_ps[claSeleccionada]
+									claSeleccionada.sort()
+
+									// Insertamos los tip_ps
+									claSeleccionada.forEach(function(tip_p) {
+										let opcion = document
+												.createElement('option')
+										opcion.value = tip_p
+										opcion.text = tip_p
+										tip_ps.add(opcion)
+									});
+								}
+
+							}
+
+							// Iniciar la carga de clas solo para comprobar que funciona
+							cargarcla();
+						</script>
+
+						<br> 
 
 						<div class="col-md-2 mb-3">
 							<label for="Fecha_ingreso">Fecha Ingreso</label> <input
@@ -548,15 +607,7 @@
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				<div class="modal-body">
-					Se va a crear un nuevo puesto <br> ¿Quiere continuar?
-				</div>
-				<div class="modal-footer"
-					style="padding-top: 10px; padding-bottom: 15px;">
-					<button type="button" class="btn btn-secondary"
-						data-dismiss="modal">Cancelar</button>
-					<button type="button" class="btn btn-primary">Aceptar</button>
-				</div>
+
 			</div>
 		</div>
 	</div>
@@ -578,15 +629,7 @@
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				<div class="modal-body">
-					Se va a crear una nueva Area<br> ¿Quiere continuar?
-				</div>
-				<div class="modal-footer"
-					style="padding-top: 10px; padding-bottom: 15px;">
-					<button type="button" class="btn btn-secondary"
-						data-dismiss="modal">Cancelar</button>
-					<button type="button" class="btn btn-primary">Aceptar</button>
-				</div>
+
 			</div>
 		</div>
 
@@ -608,15 +651,7 @@
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				<div class="modal-body">
-					Se van a modificar los datos<br> ¿Quiere continuar?
-				</div>
-				<div class="modal-footer"
-					style="padding-top: 10px; padding-bottom: 15px;">
-					<button type="button" class="btn btn-secondary"
-						data-dismiss="modal">Cancelar</button>
-					<button type="button" class="btn btn-primary">Aceptar</button>
-				</div>
+
 			</div>
 		</div>
 
@@ -647,5 +682,6 @@
 	<script src="js/freelancer.min.js"></script>
 	<script src="js/clase.js"></script>
 	<script src="js/infonavit.js"></script>
+
 </body>
 </html>

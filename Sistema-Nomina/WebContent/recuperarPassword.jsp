@@ -47,7 +47,7 @@
 			<input type="text" id="email" name="email"
 				placeholder="&#9993; Correo electrónico"
 				editcheck="minlen=5=&iexcl;Ingrese un correo valido por ejemplo alpha@ejemplo.com;type=email"
-				maxlength="30" />
+				maxlength="30" onChange="return valforms(this.form,this)" />
 
 
 
