@@ -29,16 +29,11 @@
                      <img src="img/portfolio/imagen/logo.png">
                  </div>
                   <div class="enlaces-header">
-                 
-                     <a href="menu.jsp">Inicio</a>
-                
-                     <a href="/Sistema-Nomina/Index">Datos personales</a>
-                  
-                     <a href="/Sistema-Nomina/edicionSistema">Sistema</a>
-                     
-                     <a href="nomina.jsp">Calculo Nomina</a>
-                     <a href="finiquito.jsp">Finiquitos y Liquidaciones</a>      
-                     <a href="catalogoMenu.jsp">Catálogo</a>
+                  <a href="menuEmpleado.jsp">Inicio</a>
+                     <a href="/Sistema-Nomina/Index">Datos personales</a>               
+                     <a href="visualizacionNomina.jsp">Nomina</a>                    
+                     <a href="reportesEmpleado.jsp">Reportes</a>
+                     <a href="solicitudesEmpleado.jsp">Solicitudes</a>
                  </div>
 
              </section>

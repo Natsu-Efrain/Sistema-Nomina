@@ -32,12 +32,11 @@
                      <img src="img/portfolio/imagen/logo.png">
                  </div>
                  <div class="enlaces-header">
-                     <a href="indexEmpleado.html">Inicio</a>
-                     <a href="datosPersonalesEmpleado.html">Datos personales</a>
-                     
-                     <a href="#" data-toggle="modal" data-target="#exampleModal2">Nomina</a>
-                     
-                     <a href="reportesEmpleado.html">Reportes</a>
+                 <a href="menuEmpleado.jsp">Inicio</a>
+                     <a href="/Sistema-Nomina/Index">Datos personales</a>               
+                     <a href="visualizacionNomina.jsp">Nomina</a>                    
+                     <a href="reportesEmpleado.jsp">Reportes</a>
+                     <a href="solicitudesEmpleado.jsp">Solicitudes</a>
                  </div>
                  <div class="hamburguer">
                      <i class="fas fa-bars"></i>
@@ -112,30 +111,7 @@
       </div>
     </div>
   </div>
-    
-    <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Aviso!!</h5>
-      </div>
-      <div class="modal-body1">
-          Hay dos modulos que no estan diseñados. Este es el otro :C
-      </div><br>
-      <div class="modal-footer1">
-          
-                <div class="btn-group" role="group" aria-label="Basic example" >
-  <button type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
-  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-
-</div>
-          
-      </div>
-    </div>
-  </div>
-</div>
-    
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
   <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
   <div class="scroll-to-top d-lg-none position-fixed ">
     <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
