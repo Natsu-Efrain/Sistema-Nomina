@@ -7,19 +7,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import net.sf.jasperreports.engine.JasperReport;
-
 /**
- * Servlet implementation class ConsultarNominaActual
+ * Servlet implementation class GenerarPercepcion
  */
-@WebServlet("/ConsultarNominaActual")
-public class ConsultarNominaActual extends HttpServlet {
+@WebServlet("/GenerarPercepcion")
+public class GenerarPercepcion extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ConsultarNominaActual() {
+    public GenerarPercepcion() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,10 +27,7 @@ public class ConsultarNominaActual extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String ruta_reporte="/Nomina.jrxml";
-		JasperReport jr=null;
-		
-
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**

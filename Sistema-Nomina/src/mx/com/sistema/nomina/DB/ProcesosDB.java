@@ -302,7 +302,7 @@ import java.sql.Connection;
 					return listadoDatosEmpresariales;
 				}
 				
-				
+				//Se modifican datalles Empresariales
 				public void modificacionDetallesEmpresariales(String id_empleado,String clase,String tipo_pago,String puesto) {
 					connectDatabase();
 
@@ -319,5 +319,43 @@ import java.sql.Connection;
 					}
 					desconectar();
 				}	
+				
+				//Se modifican datalles Empresariales
+				public void generar(String id_empleado,String faltas,String retardos,String horas) {
+					connectDatabase();
+
+					try {
+
+						Statement stm = connection.createStatement();
+						
+                        String Id_puesto="Select Id_puesto from Puesto where nombre_puesto='"+puesto+"'";
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+						stm.execute("SELECT totalDeducciones("+
+								"(SELECT ISR FROM Deducciones WHERE Id_Deduccion = '')," + 
+								"(SELECT Infanavit FROM Deducciones WHERE Id_Deduccion = '')," + 
+								"(SELECT IMSS FROM Deducciones WHERE Id_Deduccion = ''), "+ 
+								"(SELECT Total_FR FROM Deducciones WHERE Id_Deduccion = '')," + 
+								"(SELECT Pago_Pre FROM Deducciones WHERE Id_Deduccion = '')," + 
+								"(SELECT Fondo_A FROM Deducciones WHERE Id_Deduccion = '')," + 
+								"(SELECT Id_Deduccion FROM Deducciones WHERE Id_Deduccion = ''));");
+						System.out.println("Se actualizo correctamente");
+					} catch (Exception e) {
+					    MensajeError="ERROR: El nombre del area ya se ha registrado en la Base de datos, ingrese otro nombre!!";
+						System.out.println(e);
+					}
+					desconectar();
+				}	
+				
+				
 
 }
