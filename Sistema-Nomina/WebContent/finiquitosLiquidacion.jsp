@@ -32,16 +32,12 @@
                      <img src="img/portfolio/imagen/logo.png">
                  </div>
                  <div class="enlaces-header">
-                 
-                     <a href="menu.jsp">Inicio</a>
-                
-                     <a href="/Sistema-Nomina/Index">Datos personales</a>
-                  
-                     <a href="/Sistema-Nomina/edicionSistema">Sistema</a>
-                     
+                                      <a href="menu.jsp">Inicio</a>               
+                     <a href="/Sistema-Nomina/Index">Datos personales</a>                   
                      <a href="nomina.jsp">Calculo Nomina</a>
-                     <a href="finiquito.jsp">Finiquitos y Liquidaciones</a>      
+                     <a href="finiquitoLiquidacion.jsp">Finiquitos y Liquidaciones</a>      
                      <a href="catalogoMenu.jsp">Catálogo</a>
+                     <a href="/Sistema-Nomina/edicionSistema">Sistema</a>
                  </div>
 
              </section>
@@ -139,30 +135,6 @@
                           <div class="btn-group" role="group" aria-label="Basic example" >
   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#portfolioModal1" onclick="location.href='finiquito.html'">Finiquito</button>
   <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#portfolioModal2" data-dismiss="modal" onclick="location.href='liquidacion.html'">Liquidacion</button>
-
-</div>
-          
-      </div>
-    </div>
-  </div>
-</div>
-    
-    <!-- Portfolio Modal - Modulo no terminado -->
-    
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Aviso!!</h5>
-      </div>
-      <div class="modal-body1">
-          Hay dos modulos que no estan diseñados. Este es uno de ellos :C
-      </div><br>
-      <div class="modal-footer1">
-          
-                <div class="btn-group" role="group" aria-label="Basic example" >
-  <button type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
-  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
 
 </div>
           
