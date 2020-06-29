@@ -23,7 +23,7 @@
                      <a href="menuEmpleado.jsp">Inicio</a>
                      <a href="/Sistema-Nomina/Index">Datos personales</a>
                      
-                     <a href="#" data-toggle="modal" data-target="#exampleModal2">Nomina</a>
+                     <a href="visulizacionNomina.jsp" data-toggle="modal" data-target="#exampleModal2">Nomina</a>
                      
                      <a href="reportesEmpleado.jsp">Reportes</a>
                  </div>

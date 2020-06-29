@@ -39,7 +39,7 @@
 				<div class="enlaces-header">
 					<a href="menu.jsp">Inicio</a> <a href="/Sistema-Nomina/Index">Datos
 						personales</a> <a href="nomina.jsp">Calculo Nomina</a> <a
-						href="finiquitoLiquidacion.jsp">Finiquitos y Liquidaciones</a> <a
+						href="finiquitosLiquidacion.jsp">Finiquitos y Liquidaciones</a> <a
 						href="catalogoMenu.jsp">Catálogo</a> <a
 						href="/Sistema-Nomina/edicionSistema">Sistema</a>
 				</div>
