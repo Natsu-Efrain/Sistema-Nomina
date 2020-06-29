@@ -22,7 +22,6 @@
   <link href="css/estilos.css" rel="stylesheet">
 
 </head>
-
 <body id="page-top">
 
    <header>
@@ -32,12 +31,14 @@
                      <img src="img/portfolio/imagen/logo.png">
                  </div>
                  <div class="enlaces-header">
-                                      <a href="menu.jsp">Inicio</a>               
-                     <a href="/Sistema-Nomina/Index">Datos personales</a>                   
-                     <a href="nomina.jsp">Calculo Nomina</a>
-                     <a href="finiquitoLiquidacion.jsp">Finiquitos y Liquidaciones</a>      
-                     <a href="catalogoMenu.jsp">Catálogo</a>
-                     <a href="/Sistema-Nomina/edicionSistema">Sistema</a>
+                     <a href="index.html">Inicio</a>
+                     <a  href="datosPersonales.html">Datos personales</a>
+                     
+                     <a href="#" data-toggle="modal" data-target="#exampleModal">Empleados</a>
+                     
+                     <a href="nomina.html">Calculo Nomina</a>
+                     <a href="finiquito.html">Finiquitos y Liquidaciones</a>      
+                     <a href="catalogoMenu.html">Catálogo</a>
                  </div>
 
              </section>
@@ -46,89 +47,21 @@
          <div class="contenedor">
             <section class="contenido-header">
                 <section class="textos-header">
-                    <h1>Liquidacion</h1>
-                      <div class="form-group row">
-                          
-                          <form>
-     
-  <fieldset disabled>                     
-  <div class="form-group row">
-    <label for="idEmpleado" class="col-sm-4 col-form-label">Id Empleado:</label>
-    <div class="col-sm-8">
-      <input type="number" class="form-control" id="idEmpleado">
-    </div><br><br>
-      
-          <label for="sueldo" class="col-sm-4 col-form-label">Sueldo:</label>
-    <div class="col-sm-8">
-      <input type="number" class="form-control" id="sueldo">
-    </div><br><br>
-      
-          <label for="aguinaldo" class="col-sm-4 col-form-label">Aguinaldo:</label>
-    <div class="col-sm-8">
-      <input type="number" class="form-control" id="aguinaldo">
-    </div><br><br>
-      
-          <label for="primaVacacional" class="col-sm-4 col-form-label">Prima Vacacional:</label>
-    <div class="col-sm-8">
-      <input type="number" class="form-control" id="primaVacacional">
-    </div><br><br>
-      
-                <label for="vacaciones" class="col-sm-4 col-form-label">Dias de Vacaciones:</label>
-    <div class="col-sm-8">
-      <input type="number" class="form-control" id="vacaciones">
-    </div><br><br>
-      
-                <label for="indemnizacion" class="col-sm-4 col-form-label">Indemnizacion:</label>
-    <div class="col-sm-8">
-      <input type="number" class="form-control" id="indemnizacion">
-    </div><br><br>
-      
-      
-  </div> 
-  </fieldset>   
-                                       
-</form> 
-                          
-                          
+                    <h1>Nómina</h1>
+                    <p>Para poder continuar con el proceso de nómina se deberá ingresar el Id del empleado.</p>
+                      <div class="form-group row">                        
+                          <label for="inputId" class="col-sm-4 col-form-label">Id Empleado:</label>
+                          <div class="col-sm-8">
+                              <input type="number" class="form-control" id="idEmpleado">
+                          </div>
                     </div>
-                    
-                    
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">Finzalizar Liquidacion
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">Buscar
                     </button>
                 </section>
-                <img class="imgM"  src="img/portfolio/imagen/primera.svg">
+                <img src="img/portfolio/imagen/primera.svg">
             </section>
         </div>
-    </header>
-    
-    
-    <!-- Portafolio Modal -->
-    
-    <div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Aviso</h5>
-      </div>
-      <div class="modal-body1">
-                    ¿Estás seguro que deseas finalizar?<br>
-Al finalizar finiquito el empleado se dará
-de baja automaticamente
-      </div><br><br>
-      <div class="modal-footer1">
-          
-                <div class="btn-group" role="group" aria-label="Basic example" >
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#portfolioModal1" data-dismiss="modal">Aceptar</button>
-  <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#portfolioModal2" data-dismiss="modal">Cancelar</button>
-
-</div>
-          
-      </div>
-    </div>
-  </div>
-</div>
-    
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+    </header>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
   <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
   <div class="scroll-to-top d-lg-none position-fixed ">
     <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
